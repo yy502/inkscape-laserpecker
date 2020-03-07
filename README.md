@@ -59,6 +59,19 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 5) Click the blue "Plot" button to visualise your Gcode.
 
 
+## Sample Images
+
+I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power+speed) for your target material at the point of generation.
+
+
+## Useful Gcode Files - To Be Uploaded
+
+In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
+
+* `find_cut_speed.txt`: Using the maximum laser power to cut at different speeds. This helps you to find the fastest speed that your target material can be cut at.
+* `grayscale_sweep.txt`: Engrave a 2D "matrix" using incrementally changing power and speed settings to help you map different engraving results to accurate settings. 
+
+
 ## Credit
 This extension is based on [J Tech Laser Tool Plugin V 2_2 for inkscape 0.92](https://jtechphotonics.com/?page_id=1980) for laser engraving and cutting.
 
