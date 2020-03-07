@@ -87,11 +87,13 @@ options = {}
 defaults = {
 'header': """M05 S0
 G90
-G21 ;all units in mm
+;all units in mm
+G21
+;move fast
 G1 F3000
 
 """,
-'footer': "G1 X0 Y0 ; return to origin\n"
+'footer': ";return to origin\nG1 X0 Y0\n"
 }
 
 intersection_recursion_depth = 10
@@ -3158,8 +3160,8 @@ class laser_gcode(inkex.Effect):
             "name": "LaserPecker Engraver",
             "id": "LaserPecker Engraver",
             "speed": self.options.laser_speed,
-            "gcode before path": "G4 P0\nM03 S%d ; laser on\nG4 P0\n" % self.options.laser_power,
-            "gcode after path": "G4 P0\nM05 S0 ; laser off\nG1 F3000 ; move fast\n",
+            "gcode before path": "G4 P0\n;laser on\nM03 S%d\nG4 P0\n" % self.options.laser_power,
+            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000\n",
         }
 
         self.get_info()
