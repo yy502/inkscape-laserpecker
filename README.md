@@ -11,7 +11,7 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 
 1) Install Inkscape 0.92. Inkscape 1.0 is not supported yet.
 2) Copy **laserpecker.inx** and **laserpecker.py** into...
-	* For Linux and Mac: `~/. config/inkscape/extensions/`
+	* For Linux and Mac: `~/.config/inkscape/extensions/`
 	* For Windows: `C:\Program Files\Inkscape\share\extensions\`
 3) Start Inkscape and you should be able to access the extension from "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator" 
 
@@ -57,6 +57,19 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 3) Open [NC Viewer](https://ncviewer.com/)
 4) Clear the sample Gcode and paste your Gcode in
 5) Click the blue "Plot" button to visualise your Gcode.
+
+
+## Sample Images
+
+I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power+speed) for your target material at the point of generation.
+
+
+## Useful Gcode Files - To Be Uploaded
+
+In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
+
+* `find_cut_speed.txt`: Using the maximum laser power to cut at different speeds. This helps you to find the fastest speed that your target material can be cut at.
+* `grayscale_sweep.txt`: Engrave a 2D "matrix" using incrementally changing power and speed settings to help you map different engraving results to accurate settings. 
 
 
 ## Credit
