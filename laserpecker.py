@@ -2461,11 +2461,9 @@ class laser_gcode(inkex.Effect):
         inkex.Effect.__init__(self)
         self.OptionParser.add_option("-d", "--directory",                       action="store", type="string",          dest="directory",                           default="",                             help="Output directory")
         self.OptionParser.add_option("-f", "--filename",                        action="store", type="string",          dest="file",                                default="output.gcode",                 help="File name")
-        self.OptionParser.add_option("",   "--laser-speed",                     action="store", type="int",             dest="laser_speed",                         default="300",                          help="Laser speed (mm/min)")
+        self.OptionParser.add_option("",   "--laser-speed",                     action="store", type="int",             dest="laser_speed",                         default="100",                          help="Laser speed (mm/min)")
         self.OptionParser.add_option("",   "--laser-power",                     action="store", type="int",             dest="laser_power",                         default="255",                          help="0-255 (0=off, 255=full)")
-        self.OptionParser.add_option("",   "--suppress-all-messages",           action="store", type="inkbool",         dest="suppress_all_messages",               default=True,                           help="Hide messages during g-code generation")
-        self.OptionParser.add_option("",   "--create-log",                      action="store", type="inkbool",         dest="log_create_log",                      default=False,                          help="Create log files")
-        self.OptionParser.add_option("",   "--engraving-draw-calculation-paths",action="store", type="inkbool",         dest="engraving_draw_calculation_paths",    default=False,                          help="Draw additional graphics to debug engraving path")
+        self.OptionParser.add_option("",   "--suppress-all-messages",           action="store", type="inkbool",         dest="suppress_all_messages",               default=False,                           help="Hide messages during g-code generation")
         self.OptionParser.add_option("",   "--biarc-max-split-depth",           action="store", type="int",             dest="biarc_max_split_depth",               default="4",                            help="Defines maximum depth of splitting while approximating using biarcs.")
 
     def parse_curve(self, p, layer, w = None, f = None):
@@ -3154,7 +3152,7 @@ class laser_gcode(inkex.Effect):
         print_  = lambda *x : None
         self.get_info()
         if self.orientation_points == {} :
-            self.error(_("Orientation points have not been defined! A default set of orientation points has been automatically added."),"warning")
+            # self.error(_("Orientation points have not been defined! A default set of orientation points has been automatically added."),"warning")
             self.orientation( self.layers[min(0,len(self.layers)-1)] )
             self.get_info()
 

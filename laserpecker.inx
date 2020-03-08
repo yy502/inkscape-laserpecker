@@ -5,7 +5,7 @@
 	<dependency type="executable" location="extensions">laserpecker.py</dependency>
 	<dependency type="executable" location="extensions">inkex.py</dependency>
 
-	<param name="laser-speed" type="int" min="0" max="3000" _gui-text="Laser Speed (mm/min):">300</param>
+	<param name="laser-speed" type="int" min="0" max="3000" _gui-text="Laser Speed (mm/min):">100</param>
 	<param name="laser-power" type="int" min="0" max="255" _gui-text="Laser Power (0-255):">255</param>
 	<param name="directory" type="string" _gui-text="Directory:"></param>
 	<param name="filename" type="string" _gui-text="Filename:">gcode.txt</param>
