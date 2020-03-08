@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """
 Modified by Yi Yu (yiyu.inbox@gmail.com) 2020 for LaserPecker
+Distributed via https://github.com/yy502/inkscape-laserpecker
+
 Modified by Jay Johnson 2015, J Tech Photonics, Inc., jtechphotonics.com
 modified by Adam Polak 2014, polakiumengineering.org
 
