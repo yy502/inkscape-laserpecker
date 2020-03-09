@@ -1,5 +1,5 @@
-# Inkscape的激光啄木鸟插件
-这是一个为激光啄木鸟生成Gcode的Inkscape插件。
+# 激光啄木鸟Inkscape插件
+这是一个为激光啄木鸟生成Gcode的Inkscape插件。在App内置Gcode切割不够理想的情况下，提供了手动测试和设置激光功率和速度的机会。
 
 ## 激光啄木鸟
 激光啄木鸟是便宜好用的小型家用激光雕刻机器。具体信息请访问[官方网站](http://www.laserpecker.cn/)（[英文官网](https://www.laserpecker.net/)） 。
