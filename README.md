@@ -42,8 +42,8 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 	* Live Preview: check
 	* the rest is up to you to poke around and figure out what's best for your image.
 5) Click "OK" button **once** and close this pop up.
-6) The vectorised image is stacked on top of your bitmap image. Move it away and select and delete your bitmap image underneath.
-7) It does not matter where you position the vectorised image, as long as its size is within 100x100. Use the W and H values displayed in the tool bar to help scale your graphics.
+6) The vectorised image is stacked on top of your bitmap image. (Optional: Move it away, and then select and delete your bitmap image underneath to avoid confusion.)
+7) It does not matter where you position the vectorised graphics, as long as its size is within 100mm x 100mm. Use the W and H values displayed in the tool bar to help scale your graphics.
 8) Select all of your shapes if you have more than one. They do not have to be grouped. Now, just in case, double convert them to path from "Path" > "Object to Path".
 9) "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator" 
 10) Fill in the values as prompted and click "Apply" to generator Gcode.
@@ -61,15 +61,16 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 
 ## Sample Images
 
-I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power+speed) for your target material at the point of generation.
+I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power,speed) for your material at the point of generation.
 
 
-## Useful Gcode Files - To Be Uploaded
+## Useful Gcode Files
 
 In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
 
-* `find_cut_speed.txt`: Using the maximum laser power to cut at different speeds. This helps you to find the fastest speed that your target material can be cut at.
-* `grayscale_sweep.txt`: Engrave a 2D "matrix" using incrementally changing power and speed settings to help you map different engraving results to accurate settings. 
+* `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed). 
+* `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your meterial, consider cutting multiple times.
+* `sample_result.jpg`: Test results on a recycled paper. 
 
 
 ## Credit
