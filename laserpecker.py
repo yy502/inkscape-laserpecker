@@ -1260,25 +1260,25 @@ def atan2(*arg):
         raise ValueError, "Bad argumets for atan! (%s)" % arg
 
 
-def draw_text(text,x,y,style = None, font_size = 20) :
-    if style == None :
-        style = "font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;"
-    style += "font-size:%fpx;"%font_size
-    t = inkex.etree.SubElement(    options.doc_root, inkex.addNS('text','svg'), {
-                            'x':    str(x),
-                            inkex.addNS("space","xml"):"preserve",
-                            'y':    str(y)
-                        })
-    text = str(text).split("\n")
-    for s in text :
-        span = inkex.etree.SubElement( t, inkex.addNS('tspan','svg'),
-                        {
-                            'x':    str(x),
-                            'y':    str(+y),
-                            inkex.addNS("role","sodipodi"):"line",
-                        })
-        y += font_size
-        span.text = s
+# def draw_text(text,x,y,style = None, font_size = 20) :
+#     if style == None :
+#         style = "font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;"
+#     style += "font-size:%fpx;"%font_size
+#     t = inkex.etree.SubElement(    options.doc_root, inkex.addNS('text','svg'), {
+#                             'x':    str(x),
+#                             inkex.addNS("space","xml"):"preserve",
+#                             'y':    str(y)
+#                         })
+#     text = str(text).split("\n")
+#     for s in text :
+#         span = inkex.etree.SubElement( t, inkex.addNS('tspan','svg'),
+#                         {
+#                             'x':    str(x),
+#                             'y':    str(+y),
+#                             inkex.addNS("role","sodipodi"):"line",
+#                         })
+#         y += font_size
+#         span.text = s
 
 
 def draw_pointer(x,color = "#f00", figure = "cross", comment = "", width = .1) :
@@ -3100,7 +3100,6 @@ class laser_gcode(inkex.Effect):
             doc_height = 1052.3622047
             print_("Overruding height from 100 percents to %s" % doc_height)
 
-        # to update reference points 
         print_("Document height: " + str(doc_height));
 
         points = [[0.,0.,0.],[100.,0.,0.],[0.,100.,0.]]
@@ -3125,7 +3124,7 @@ class laser_gcode(inkex.Effect):
                 })
             t = inkex.etree.SubElement(    g, inkex.addNS('text','svg'),
                 {
-                    'style':    "font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;",
+                    'style':    "font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;",
                     inkex.addNS("space","xml"):"preserve",
                     'x':    str(si[0]+10),
                     'y':    str(-si[1]-10+doc_height),
