@@ -10,7 +10,7 @@
 	<param name="directory" type="string" _gui-text="Directory:"></param>
 	<param name="filename" type="string" _gui-text="Filename:">gcode.txt</param>
 
-	<effect>
+	<effect needs-live-preview="false">
 		<effects-menu>
 			<submenu _name="LaserPecker"/>
 		</effects-menu>
