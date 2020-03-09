@@ -1,7 +1,7 @@
 [中文介绍点此处](README_CN.md)
 
 # LaserPecker Extension for Inkscape
-This is a Gcode generator extension for Inkscape, tailored for LaserPecker laser engraver.
+This is a Gcode generator extension for Inkscape, tailored for LaserPecker laser engraver. The LaserPecker App has a built-in Gcode feature. This extension allows you to manually set power and speed beyong the App's limitations. (Hardware limitations still apply. Read on...)
 
 
 ## LaserPecker
