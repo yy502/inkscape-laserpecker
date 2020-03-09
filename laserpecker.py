@@ -2891,7 +2891,6 @@ class laser_gcode(inkex.Effect):
                 elif i.get("id") in self.selected :
                     self.error(_("This extension works with Paths and Dynamic Offsets and groups of them only! All other objects will be ignored!\nSolution 1: press Path->Object to path or Shift+Ctrl+C.\nSolution 2: Path->Dynamic offset or Ctrl+J.\nSolution 3: export all contours to PostScript level 2 (File->Save As->.ps) and File->Import this file."),"selection_contains_objects_that_are_not_paths")
 
-
         recursive_search(self.document.getroot(),self.document.getroot())
 
 
@@ -2905,21 +2904,27 @@ class laser_gcode(inkex.Effect):
                 p2 += [i]
             if i.tag == inkex.addNS("g",'svg') and i.get("gcodetools") == "Gcodetools orientation point (3 points)":
                 p3 += [i]
-        if len(p2)==2 : p=p2
-        elif len(p3)==3 : p=p3
-        if p==None : return None
+        if len(p2)==2:
+            p=p2
+        elif len(p3)==3:
+            p=p3
+        if p==None:
+            return None
         points = []
         for i in p :
             point = [[],[]]
-            for  node in i :
+            for node in i :
                 if node.get('gcodetools') == "Gcodetools orientation point arrow":
                     point[0] = self.apply_transforms(node,cubicsuperpath.parsePath(node.get("d")))[0][0][1]
                 if node.get('gcodetools') == "Gcodetools orientation point text":
                     r = re.match(r'(?i)\s*\(\s*(-?\s*\d*(?:,|\.)*\d*)\s*;\s*(-?\s*\d*(?:,|\.)*\d*)\s*;\s*(-?\s*\d*(?:,|\.)*\d*)\s*\)\s*',node.text)
                     point[1] = [float(r.group(1)),float(r.group(2)),float(r.group(3))]
-            if point[0]!=[] and point[1]!=[]:    points += [point]
-        if len(points)==len(p2)==2 or len(points)==len(p3)==3 : return points
-        else : return None
+            if point[0]!=[] and point[1]!=[]:
+                points += [point]
+        if len(points)==len(p2)==2 or len(points)==len(p3)==3:
+            return points
+        else:
+            return None
 
 ################################################################################
 ###
@@ -3102,7 +3107,7 @@ class laser_gcode(inkex.Effect):
 
         print_("Document height: " + str(doc_height));
 
-        points = [[0.,0.,0.],[100.,0.,0.],[0.,100.,0.]]
+        points = [[0,0,0],[100,0,0],[0,100,0]]
         orientation_scale = 1
         print_("orientation_scale < 0 ===> switching to mm units=%0.10f"%orientation_scale )
 
@@ -3147,7 +3152,7 @@ class laser_gcode(inkex.Effect):
         options.doc_root = self.document.getroot()
         # define print_ function
         # to clean up print_ .... not needed
-        global print_
+        # global print_
         print_  = lambda *x : None
         self.get_info()
         if self.orientation_points == {} :
