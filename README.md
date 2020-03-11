@@ -21,7 +21,8 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 ## Settings and Limitations
 
 * Laser head idle movement speed is hard-coded to 3000mm/min, as this is what's used in LaserPecker's official sample Gcode files.
-* Laser power can be set from 0 (off) to 255 (max).
+* Lowest laser speed is limited to 70mm/min as this is the lowest effective speed that LaserPecker allows. i.e. I tested speeds from 0.01 to 70 and they are all the same to LaserPecker.
+* Laser power can be set from 1 (min) to 255 (max). (0=off, which makes the Gcode useless, so I disallowed it.)
 * Engraving area is limited to 100mm x 100mm in size.
 * This extension warns if the target graphics are larger than 100x100.
 * The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates for this 100x100 area is from (-50,-50) to (50,50). Although LaserPecker L1 is capable of engraving a much larger area from (-100,-70) to (100,70), it is limited by the App and the machine to minimise distortion and ensure consistent engraving quality.
