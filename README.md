@@ -67,13 +67,17 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power,speed) for your material at the point of generation.
 
 
-## Useful Gcode Files
+## Helper Files
 
 In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
 
 * `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed). 
 * `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your meterial, consider cutting multiple times.
 * `sample_result.jpg`: Test results on a recycled paper. 
+
+In `misc` directory, there are:
+* `100x100_markers.svg`: an SVG file of some markers in a 100mm x 100mm square. It's already converted to path. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engravng distorsion and sizing.
+* `100x100_markers_s400_p200.txt`: Gcode for the markers with speed=400 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
 
 
 ## Credit
