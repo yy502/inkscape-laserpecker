@@ -9,6 +9,11 @@ LaserPecker is an affordable and portable cunsumer level laser engraver.
 For more details, visit their official [English site](https://www.laserpecker.net/) or [Chinese site](http://www.laserpecker.cn/). 
 
 
+## Compatibility
+
+This extension has been tested with LaserPecker L1 (1st generation) and Pro version. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
+
+
 ## Installation
 
 1) Install Inkscape 0.92. Inkscape 1.0 is not supported yet.
