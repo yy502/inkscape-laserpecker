@@ -77,7 +77,7 @@ In `gcode` directory, I have created some Gcode files to help you quickly test a
 
 In `misc` directory, there are:
 * `100x100_markers.svg`: an SVG file of some markers in a 100mm x 100mm square. It's already converted to path. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engravng distorsion and sizing.
-* `100x100_markers_s400_p200.txt`: Gcode for the markers with speed=400 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
+* `100x100_markers_s500_p200.txt`: Gcode for the markers with speed=500 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
 
 
 ## Credit
