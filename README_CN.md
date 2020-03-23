@@ -14,7 +14,7 @@
 ## 安装方法
 
 1) 安装Inkscape 0.92版。暂时还不支持1.0版。
-2) 复制 **laserpecker.inx** 和 **laserpecker.py** 文件到...
+2) 复制`extension`文件夹中的**laserpecker.inx**和**laserpecker.py**文件到...
 	* Linux和Mac系统: `~/.config/inkscape/extensions/`
 	* Windows系统: `C:\Program Files\Inkscape\share\extensions\`
 3) 运行Inkscape，插件应该在"扩展"菜单下的"LaserPecker" > "LaserPecker Gcode Generator" 
