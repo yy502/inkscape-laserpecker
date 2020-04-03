@@ -1,0 +1,1237 @@
+M05 S0
+G90
+;all units in mm
+G21
+;move fast
+G1 F3000
+
+G1  X-24.90680 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-24.90680
+G1  X24.90680 Y-49.81360
+G1  X-49.81360 Y24.90680
+G1  X-24.90680 Y49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-24.90680 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-24.90680 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X49.81360 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X49.81360 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-49.81360 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-47.32290
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-47.32290
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X47.32290 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X47.32290 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-44.83220
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-44.83220
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X44.83220 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X44.83220 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-42.34160
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-42.34160
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X42.34160 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X42.34160 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-39.85090
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-39.85090
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X39.85090 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X39.85090 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-37.36020
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-37.36020
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X37.36020 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X37.36020 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-34.86950
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-34.86950
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X34.86950 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X34.86950 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-32.37880
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-32.37880
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X32.37880 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X32.37880 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-29.88820
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-29.88820
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X29.88820 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X29.88820 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-27.39750
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-27.39750
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X27.39750 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X27.39750 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-24.90680
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-24.90680
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X24.90680 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X24.90680 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-22.41610
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-22.41610
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X24.90680 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y24.90680
+G1  X-24.90680 Y-49.81360
+G1  X-49.81360 Y-24.90680
+G1  X24.90680 Y49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X22.41610 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X22.41610 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-19.92540
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-19.92540
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X19.92540 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X19.92540 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-17.43480
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-17.43480
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X17.43480 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X17.43480 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-14.94410
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-14.94410
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X14.94410 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X14.94410 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-12.45340
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-12.45340
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X12.45340 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X12.45340 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-9.96270
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-9.96270
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X9.96270 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X9.96270 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-7.47200
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-7.47200
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X7.47200 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X7.47200 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-4.98140
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-4.98140
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X4.98140 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X4.98140 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y-2.49070
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-2.49070
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X2.49070 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X2.49070 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y0.00000
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y0.00000
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X0.00000 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X0.00000 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y2.49070
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y2.49070
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X0.00000 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y0.00000
+G1  X0.00000 Y-49.81360
+G1  X-49.81360 Y0.00000
+G1  X0.00000 Y49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-2.49070 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-2.49070 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y4.98140
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y4.98140
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-4.98140 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-4.98140 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y7.47200
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y7.47200
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-7.47200 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-7.47200 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y9.96270
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y9.96270
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-9.96270 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-9.96270 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y12.45340
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y12.45340
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-12.45340 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-12.45340 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y14.94410
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y14.94410
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-14.94410 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-14.94410 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y17.43480
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y17.43480
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-17.43480 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-17.43480 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y19.92540
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y19.92540
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-19.92540 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-19.92540 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y22.41610
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y22.41610
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-22.41610 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-22.41610 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y24.90680
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y24.90680
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-27.39750 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-27.39750 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y27.39750
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y27.39750
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-29.88820 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-29.88820 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y29.88820
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y29.88820
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-32.37880 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-32.37880 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y32.37880
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y32.37880
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-34.86950 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-34.86950 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y34.86950
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y34.86950
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-37.36020 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-37.36020 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y37.36020
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y37.36020
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-39.85090 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-39.85090 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y39.85090
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y39.85090
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-42.34160 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-42.34160 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y42.34160
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y42.34160
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-44.83220 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-44.83220 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y44.83230
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y44.83230
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-47.32290 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-47.32290 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y47.32290
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y47.32290
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X49.81360 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+G1  X-49.81360 Y49.81360
+G4 P0
+;laser on
+M03 S200
+G4 P0
+
+G1 F500
+G1  X-49.81360 Y-49.81360
+G4 P0
+;laser off
+M05 S0
+;move fast
+G1 F3000
+
+
+;return to origin
+G1 X0 Y0
