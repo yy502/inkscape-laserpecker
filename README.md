@@ -30,7 +30,7 @@ This extension has been tested with LaserPecker L1 (1st generation) and Pro vers
 * Laser power can be set from 1 (min) to 255 (max). (0=off, which makes the Gcode useless, so I disallowed it.)
 * Engraving area is limited to 100mm x 100mm in size.
 * This extension warns if the target graphics are larger than 100x100.
-* The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates for this 100x100 area is from (-50,-50) to (50,50). Although LaserPecker L1 is capable of engraving a much larger area from (-100,-70) to (100,70), it is limited by the App and the machine to minimise distortion and ensure consistent engraving quality. See `engraving_over_200mm_x_140mm.mp4` and `engraving_over_200mm_x_140mm.jpg` in `misc` directory.
+* The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates for this 100x100 area is from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area from (-100,-70) to (100,70), it is limited by the App and the machine to minimise distortion and ensure consistent engraving quality. See `engraving_over_200mm_x_140mm.mp4` and `engraving_over_200mm_x_140mm.jpg` in `misc` directory for a demo.
 * The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting absolute Gcode coordinates are centred to the origin (0,0).  
 * Output Gcode file should end in .txt. The extension does not normally matter, as it's just a plain text file, but here .txt is what's recognised as Gcode files by LaserPecker App (in Android at least).
 * Output Gcode file should not exceed 1MB in size.
