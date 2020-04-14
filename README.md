@@ -1,17 +1,17 @@
 [中文介绍点此处](README_CN.md)
 
 # LaserPecker Extension for Inkscape
-This is a Gcode generator extension for Inkscape, tailored for LaserPecker laser engraver. The LaserPecker App has a built-in Gcode feature. This extension allows you to manually set power and speed beyond the App's limitations. (Hardware limitations still apply. Read on...)
+These are Gcode generator extensions for Inkscape, tailored for LaserPecker L1 and L1 Pro. The LaserPecker App has a built-in Gcode feature. This extension allows you to manually set power and speed beyond the App's limitations. (Hardware limitations still apply. Read on...)
 
 
 ## LaserPecker
-LaserPecker is an affordable and portable cunsumer level laser engraver.
+LaserPecker is a brand of affordable and portable consumer level laser engravers.
 For more details, visit their official [English site](https://www.laserpecker.net/) or [Chinese site](http://www.laserpecker.cn/). 
 
 
 ## Compatibility
 
-This extension has been tested with LaserPecker L1 (1st generation) and Pro version. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
+This extension has been tested with LaserPecker L1 and L1 Pro models. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
 
 
 ## Installation
@@ -62,6 +62,8 @@ This extension has been tested with LaserPecker L1 (1st generation) and Pro vers
 
 ## Bonus: Inspect Generated Gcode
 
+[Click here for a video demo](tutorial/inspect_gcode.mp4)
+
 1) Open up the generated file with a text editor
 2) Select all texts and copy
 3) Open [NC Viewer](https://ncviewer.com/)
@@ -86,6 +88,13 @@ In `misc` directory, there are several sets of `markers` files. Each set has the
 * `.svg`: The SVG file of the markers. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engravng distorsion and sizing.
 * `.txt`: Gcode for the markers with speed=500 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
 * `.png`: PNG image of the markers only for quick preview. I do not suggest engravng this as it's MUCH slower than using Gcode.
+
+
+## Experimental Extension for L1
+
+This extension helps you to utilise absolute Gcode coordinates and engrave over 200mm x 140mm area with L1 model.
+
+(to be updated...)
 
 
 ## Credit

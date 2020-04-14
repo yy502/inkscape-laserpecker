@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <_name>Gcode Generator for L1/Pro</_name>
-    <id>laserpecker</id>
-	<dependency type="executable" location="extensions">laserpecker.py</dependency>
+    <_name>Oversize Gcode Generator for L1</_name>
+    <id>laserpecker_l1_oversize</id>
+	<dependency type="executable" location="extensions">laserpecker_l1_oversize.py</dependency>
 
+	<param name="correct-page-size" type="boolean" _gui-text="Page size has been set to 200x140 (mm).">false</param>
 	<param name="laser-speed" type="int" min="70" max="3000" _gui-text="Laser Speed (mm/min):">200</param>
 	<param name="laser-power" type="int" min="1" max="255" _gui-text="Laser Power (1-255):">255</param>
 	<param name="directory" type="string" _gui-text="Directory:"></param>
@@ -17,7 +18,7 @@
   	</effect>
 
 	<script>
-		<command reldir="extensions" interpreter="python">laserpecker.py</command>
+		<command reldir="extensions" interpreter="python">laserpecker_l1_oversize.py</command>
 	</script>
 
 </inkscape-extension>
