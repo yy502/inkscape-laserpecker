@@ -33,6 +33,8 @@
 
 ## 位图转Gcode操作流程
 
+[视频演示点此处](tutorial/image_to_gcode.mp4)
+
 1) 运行Inkscape
 2) 导入图像
 3) 选中图像，点"Path"菜单，然后选"Trace Bitmap"

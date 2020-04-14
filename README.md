@@ -38,6 +38,8 @@ This extension has been tested with LaserPecker L1 (1st generation) and Pro vers
 
 ## Image to Gcode
 
+[Click here for a video tutorial](tutorial/image_to_gcode.mp4)
+
 1) Launch Inkscape.
 2) Import an image, preferably a black and white image onto the blank canvas.
 3) Select the image, then "Path" > "Trace Bitmap"
