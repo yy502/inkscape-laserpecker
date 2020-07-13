@@ -59,7 +59,6 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 10) Fill in the values as prompted and click "Apply" to generator Gcode.
 
 
-
 ## Bonus: Inspect Generated Gcode
 
 [Click here for a video demo](tutorial/inspect_gcode.mp4)
@@ -69,6 +68,14 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 3) Open [NC Viewer](https://ncviewer.com/)
 4) Clear the sample Gcode and paste your Gcode in
 5) Click the blue "Plot" button to visualise your Gcode.
+
+
+## Sending Gcode Files to App
+
+Once the `.txt` Gcode files are generated...
+
+* **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
+* **iOS:** copy to `Files > Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
 
 
 ## Sample Images
