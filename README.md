@@ -59,6 +59,15 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 10) Fill in the values as prompted and click "Apply" to generator Gcode.
 
 
+## Filling Your Shapes With Lines
+
+You may have noticed that only the edges of your grapic are converted to paths, and therefore Gcode. While this is desireable in some situations, like for cutting shapes out of your materials, we sometimes want to fill the shapes so they look like the original image, not just a hollow trace.
+
+Here is how: you need to download and install https://github.com/KnoxMakers/KM-Laser extension for Inkscape, and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
+
+It is that easy! After filling your shape, generate Gcode as you would and inspect your Gcode (read the next section) before enraving.
+
+
 ## Bonus: Inspect Generated Gcode
 
 [Click here for a video demo](tutorial/inspect_gcode.mp4)
