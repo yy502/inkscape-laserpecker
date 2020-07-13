@@ -53,6 +53,11 @@
 9) "扩展"菜单 > "LaserPecker" > "LaserPecker Gcode Generator" 
 10) 填入功率，速度，文件夹和文件名，点Apply生成Gcode文件。图形复杂的话可能会花几秒钟。之后会有重叠雕刻路径预览。不用管它。选中删掉也行。这个跟Gcode文件没关系了。
 
+## 填充图形
+
+你应该已经注意到了我们生成的Gcode是图形的外框。这个适用于切割，但是如果我们想要用Gcode来雕刻原始图像的话，就需要用到另外一个插件来用直线填充有色的图形部分了。
+
+首先，下载并安装https://github.com/KnoxMakers/KM-Laser 插件。注意`extensions`和`palettes`内的文件都要复制。然后观看这个演示视频学习怎么使用这个填充插件。
 
 ## 额外技巧：检测生成的Gcode
 
@@ -61,6 +66,13 @@
 3) 访问[NC Viewer](https://ncviewer.com/)
 4) 清除左边已经有的示范Gcode，把你的Gcode贴进去
 5) 点下面的"Plot"按钮就可以看到图形化的Gcode路径了。
+
+
+## 传送Gcode文件到手机
+
+Gcode文件生成以后，
+* **安卓手机：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
+* **iOS：** 复制`.txt`文件到`Files > Laserpecker > matarialgcode`文件夹中。
 
 
 ## 例图
