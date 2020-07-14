@@ -65,7 +65,13 @@ You may have noticed that only the edges of your grapic are converted to paths, 
 
 Here is how: you need to download and install https://github.com/KnoxMakers/KM-Laser extension for Inkscape, and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
 
-It is that easy! After filling your shape, generate Gcode as you would and inspect your Gcode (read the next section) before enraving.
+There are three options you can tweak:
+
+* **Hatch spacing:** first to reduce your shape stroke thickness to very low, so you can see the paths clearly. Then enable live preview and try out different spacing for your desired effect.
+* **Hatch angle:** commonly we use 0 or 45 degrees.
+* **Crosshatch:** cross fill or one-way parallel fill. Note that cross fill is twice long as parallel fill.
+
+It is that easy! After filling your shape, generate Gcode as you would and inspect your Gcode (read the next section) before engraving.
 
 
 ## Bonus: Inspect Generated Gcode
