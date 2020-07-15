@@ -61,7 +61,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 
 ## Filling Your Shapes With Lines
 
-You may have noticed that only the edges of your grapic are converted to paths, and therefore Gcode. While this is desireable in some situations, like for cutting shapes out of your materials, we sometimes want to fill the shapes so they look like the original image, not just a hollow trace.
+You may have noticed that only the edges of your graphic are converted to paths, and therefore Gcode. While this is desireable in some situations, like for cutting shapes out of your materials, we sometimes want to fill the shapes so they look like the original image, not just a hollow trace.
 
 Here is how: you need to download and install https://github.com/KnoxMakers/KM-Laser extension for Inkscape, and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
 
@@ -103,24 +103,23 @@ I have included a few sample images for you to test convert to Gcode and engrave
 In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
 
 * `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed). 
-* `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your meterial, consider cutting multiple times.
+* `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your material, consider cutting multiple times.
 * `sample_result.jpg`: Test results on a recycled paper. 
 
 In `misc` directory, there are several sets of `markers` files. Each set has the following files:
-* `.svg`: The SVG file of the markers. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engravng distorsion and sizing.
+* `.svg`: The SVG file of the markers. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engraving distortion and sizing.
 * `.txt`: Gcode for the markers with speed=500 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
-* `.png`: PNG image of the markers only for quick preview. I do not suggest engravng this as it's MUCH slower than using Gcode.
+* `.png`: PNG image of the markers only for quick preview. I do not suggest engraving this as it's MUCH slower than using Gcode.
 
 
 ## Experimental Extension for L1
 
 This extension helps you to utilise absolute Gcode coordinates and engrave over 200mm x 140mm area with L1 model.
-
-(to be updated...)
+However, the oversize engraving result has been inconsistent around the far ends. In my opinion it's not worth the hassle, so I have stopped working on this. There's a chance that LaserPecker will officially unlock this capability, if they manage to reduce distortion via their App.
 
 
 ## Credit
-This extension is based on [J Tech Laser Tool Plugin V 2_2 for inkscape 0.92](https://jtechphotonics.com/?page_id=1980) for laser engraving and cutting.
+This extension is based on [J Tech Laser Tool Plugin V 2_2 for Inkscape 0.92](https://jtechphotonics.com/?page_id=1980) for laser engraving and cutting.
 
 
 ## License
