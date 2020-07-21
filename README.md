@@ -1,7 +1,7 @@
 [中文介绍点此处](README_CN.md)
 
 # LaserPecker Extension for Inkscape
-These are Gcode generator extensions for Inkscape, tailored for LaserPecker L1 and L1 Pro. The LaserPecker App has a built-in Gcode feature. This extension allows you to manually set power and speed beyond the App's limitations. (Hardware limitations still apply. Read on...)
+This is a Gcode generator extension for Inkscape, tailored for LaserPecker L1 and L1 Pro. The LaserPecker App has a built-in Gcode converter with capability of line-filling, which is pretty easy to use. This extension allows you to manually set power and speed beyond the App's limitations with Gcode values. (Hardware limitations still apply. Read on...)
 
 
 ## LaserPecker
@@ -11,7 +11,7 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 
 ## Compatibility
 
-This extension has been tested with LaserPecker L1 and L1 Pro models. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
+This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
 
 
 ## Installation
@@ -26,14 +26,14 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 ## Settings and Limitations
 
 * Laser head idle movement speed is hard-coded to 3000mm/min, as this is what's used in LaserPecker's official sample Gcode files.
-* Lowest laser speed is limited to 70mm/min as this is the lowest effective speed that LaserPecker allows. i.e. I tested speeds from 0.01 to 70 and they are all the same to LaserPecker.
+* Lowest laser speed is limited to 70mm/min, as this is the lowest effective speed that LaserPecker App allows. i.e. I tested speeds from 0.01 to 70mm/min and they all came out the same on the engraver end.
 * Laser power can be set from 1 (min) to 255 (max). (0=off, which makes the Gcode useless, so I disallowed it.)
 * Engraving area is limited to 100mm x 100mm in size.
-* This extension warns if the target graphics are larger than 100x100.
-* The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates for this 100x100 area is from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area from (-100,-70) to (100,70), it is limited by the App and the machine to minimise distortion and ensure consistent engraving quality. See `engraving_over_200mm_x_140mm.mp4` and `engraving_over_200mm_x_140mm.jpg` in `misc` directory for a demo.
-* The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting absolute Gcode coordinates are centred to the origin (0,0).  
-* Output Gcode file should end in .txt. The extension does not normally matter, as it's just a plain text file, but here .txt is what's recognised as Gcode files by LaserPecker App (in Android at least).
-* Output Gcode file should not exceed 1MB in size.
+* This extension warns if the target graphics are larger than 100mm x 100mm, and you should scale it down and try again.
+* The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates range from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area, from (-100,-70) to (100,70) as I manually tested, it is limited to 100mm x 100mm by the App and the machine to minimise distortion and ensure consistent engraving quality. See [engraving_over_200mm_x_140mm.mp4](misc/engraving_over_200mm_x_140mm.mp4) and [engraving_over_200mm_x_140mm.jpg](misc/engraving_over_200mm_x_140mm.jpg) for a demo.
+* The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting Gcode coordinates are centred to the origin (0,0).  
+* Output Gcode file should end in `.txt`. The extension does not normally matter, as it's just a plain text file, but here `.txt` is what's recognised as Gcode files by LaserPecker App.
+* Output Gcode file should not exceed 1MB in size. This is a hard limit by the engraver's memory.
 
 
 ## Image to Gcode
@@ -57,13 +57,17 @@ This extension has been tested with LaserPecker L1 and L1 Pro models. There are 
 8) Select all of your shapes if you have more than one. They do not have to be grouped. Now, just in case, double convert them to path from "Path" > "Object to Path".
 9) "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator" 
 10) Fill in the values as prompted and click "Apply" to generator Gcode.
+11) The auto generated markers over your grapgics can be deleted.
 
 
 ## Filling Your Shapes With Lines
 
-You may have noticed that only the edges of your graphic are converted to paths, and therefore Gcode. While this is desireable in some situations, like for cutting shapes out of your materials, we sometimes want to fill the shapes so they look like the original image, not just a hollow trace.
+You may have noticed that only the edges of your graphic are converted to paths, and therefore to Gcode. While this is desireable in some situations, like for cutting shapes out of your materials, we sometimes want to fill the shapes so they look like the original image, not just a hollow trace.
 
-Here is how: you need to download and install https://github.com/KnoxMakers/KM-Laser extension for Inkscape, and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
+Here is how:
+
+* you need to download and install https://github.com/KnoxMakers/KM-Laser extension for Inkscape
+* and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
 
 There are three options you can tweak:
 
@@ -71,7 +75,7 @@ There are three options you can tweak:
 * **Hatch angle:** commonly we use 0 or 45 degrees.
 * **Crosshatch:** cross fill or one-way parallel fill. Note that cross fill is twice long as parallel fill.
 
-It is that easy! After filling your shape, generate Gcode as you would and inspect your Gcode (read the next section) before engraving.
+It is that easy! After filling your shape, generate Gcode as you would and optionally inspect your Gcode (read the next section) before engraving.
 
 
 ## Bonus: Inspect Generated Gcode
