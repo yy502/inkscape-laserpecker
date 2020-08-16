@@ -94,7 +94,7 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 Once the `.txt` Gcode files are generated...
 
 * **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
-* **iOS:** copy to `Files > Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
+* **iOS:** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
 
 
 ## Sample Images
