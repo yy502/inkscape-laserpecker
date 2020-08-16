@@ -81,7 +81,7 @@
 
 Gcode文件生成以后，
 * **安卓手机：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
-* **iOS：** 复制`.txt`文件到`Files > Laserpecker > matarialgcode`文件夹中。
+* **iOS：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
 
 
 ## 例图
