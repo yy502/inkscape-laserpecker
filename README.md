@@ -18,7 +18,8 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 
 1) Install Inkscape 0.92. Inkscape 1.0 is not supported yet.
 2) Copy **laserpecker.inx** and **laserpecker.py** from `extension` directory into...
-	* For Linux and Mac: `~/.config/inkscape/extensions/`
+	* For Linux: `~/.config/inkscape/extensions/`
+	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` and click `Open`
 	* For Windows: `C:\Program Files\Inkscape\share\extensions\`
 3) Start Inkscape and you should be able to access the extension from "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator" 
 
