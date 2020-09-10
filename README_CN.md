@@ -18,7 +18,7 @@
 	* Linux: `~/.config/inkscape/extensions/`
 	* MacOS: 运行Inkscape > `Preferences` > `System` > 找到`User extensions`然后点击`Open`打开文件夹。复制之后重启Inkscape。
 	* Windows系统: `C:\Program Files\Inkscape\share\extensions\`
-3) 运行Inkscape，插件应该在"扩展"菜单下的"LaserPecker" > "LaserPecker Gcode Generator" 
+3) 运行Inkscape，插件应该在"扩展"菜单下的"LaserPecker" > "Gcode Generator for L1/Pro" 
 
 ## 设置和限制
 
