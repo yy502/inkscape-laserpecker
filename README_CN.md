@@ -58,7 +58,7 @@
 
 你应该已经注意到了我们生成的Gcode是图形的外框。这个适用于切割，但是如果我们想要用Gcode来雕刻原始图像的话，就需要用到另外一个插件来用直线填充有色的图形部分了。
 
-首先，下载并安装https://github.com/KnoxMakers/KM-Laser 插件。注意`extensions`和`palettes`内的文件都要复制。然后观看这个演示视频学习怎么使用这个填充插件。
+首先，下载并安装https://github.com/KnoxMakers/KM-Laser 插件。注意`extensions`和`palettes`内的文件都要复制。然后观看这个演示视频学习怎么使用这个填充插件：https://www.youtube.com/watch?v=qdIjZXzT-QE
 
 
 这个填充插件有三个设置值得尝试：
