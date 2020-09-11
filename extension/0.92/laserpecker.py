@@ -2449,7 +2449,7 @@ class laser_gcode(inkex.Effect):
                         y = float(word[1:]) - y_min - height/2
                         line = line.replace(word, "Y%.5f" % y)
             _gcode += line + '\n'
-        return _gcode
+        return ";width:%3d mm\n;height:%3d mm\n\n" % (width, height) + _gcode
 
     def export_gcode(self, gcode):
         f = open(self.options.directory+self.options.file, "w")
