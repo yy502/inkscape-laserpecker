@@ -13,12 +13,12 @@
 
 ## 安装方法
 
-1) 安装Inkscape 0.92版。暂时还不支持1.0版。
-2) 复制`extension`文件夹中的**laserpecker.inx**和**laserpecker.py**文件到...
+1) 安装Inkscape 0.92或1.0版。
+2) 取决于你的Inkscape版本以及操作系统，复制`extension/0.92`或`extension/1.0`文件夹中的**laserpecker.inx**和**laserpecker.py**文件到...
 	* Linux: `~/.config/inkscape/extensions/`
 	* MacOS: 运行Inkscape > `Preferences` > `System` > 找到`User extensions`然后点击`Open`打开文件夹。复制之后重启Inkscape。
 	* Windows系统: `C:\Program Files\Inkscape\share\extensions\`
-3) 运行Inkscape，插件应该在"扩展"菜单下的"LaserPecker" > "Gcode Generator for L1/Pro" 
+3) 运行Inkscape，插件应该在"扩展"菜单下的"LaserPecker" > "Gcode Generator for L1/Pro"
 
 ## 设置和限制
 
@@ -28,7 +28,7 @@
 * 雕刻区域限制在100mm x 100mm。
 * 如果图形超过100mm x 100mm，插件会提示。
 * 雕刻原点 (0,0) 在100mm x 100mm雕刻区域的中心。也就是说，有效的绝对雕刻坐标实际上是(-50,-50)到(50,50)这么个方形范围之内。虽然通过测试，我发现激光啄木鸟一代(不是Pro)的实际雕刻范围在(-100,-70)到(100,70)这么大的范围，厂商还是限制了100x100这个保守的区域来减小形变，保证雕刻质量。演示效果请参考`misc`文件夹中的`engraving_over_200mm_x_140mm.mp4`和`engraving_over_200mm_x_140mm.jpg`。
-* 你在Inkscape的画布上可以随意放置图形。此插件在输出Gcode坐标的时候会自动修正到整体图形以原点为中心。  
+* 你在Inkscape的画布上可以随意放置图形。此插件在输出Gcode坐标的时候会自动修正到整体图形以原点为中心。
 * 输出的Gcode文件是纯文本文件。一般来说扩展名不重要。但要传给安卓app的话，需要用txt扩展名才能被app识别。
 * 输出的Gcode文件体积不能超过1MB，否则机器内存不够。
 
@@ -51,7 +51,7 @@
 6) 生成的矢量图现在重叠在你的位图上面。你可以把矢量图移开一点，选中位图然后把它删掉，免得碍事。
 7) 矢量图形放画布的什么位置不重要，只要尺寸在100mm x 100mm以内就行。工具栏有显示宽高尺寸。利用这个缩放到你需要的尺寸。
 8) 选中你要雕刻的图形，从"Path"菜单中选"Object to Path"转换成路径。
-9) "扩展"菜单 > "LaserPecker" > "LaserPecker Gcode Generator" 
+9) "扩展"菜单 > "LaserPecker" > "LaserPecker Gcode Generator"
 10) 填入功率，速度，文件夹和文件名，点Apply生成Gcode文件。图形复杂的话可能会花几秒钟。之后会有重叠雕刻路径预览。不用管它。选中删掉也行。这个跟Gcode文件没关系了。
 
 ## 填充图形
@@ -69,7 +69,7 @@
 
 
 
-## 额外技巧：检测生成的Gcode
+## 可选步骤：检测生成的Gcode
 
 1) 打开Gcode文件
 2) 复制所有内容
@@ -92,7 +92,7 @@ Gcode文件生成以后，
 
 ## 实用帮助文件
 
-在`gcode`文件夹中有两个Gcode文件，可以帮助你快速测试和找到最合适你的材料的雕刻或者切割的设置组合（功率+速度）。
+在`testing`文件夹中有两个Gcode文件，可以帮助你快速测试和找到最合适你的材料的雕刻或者切割的设置组合（功率+速度）。
 
 * `engraving_test_p160-255,s500-800.txt`: 用不同的功率和速度扫灰度来测试雕刻效果。
 * `cutting_test_p200-255,s70-400.txt`: 这个是给你测试切割设置组合的。如果连最高有效设置(功率255,速度70)都无法一次切割你的材料的话，就只能考虑切多次了。

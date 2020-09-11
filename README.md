@@ -6,7 +6,7 @@ This is a Gcode generator extension for Inkscape, tailored for LaserPecker L1 an
 
 ## LaserPecker
 LaserPecker is a brand of affordable and portable consumer level laser engravers.
-For more details, visit their official [English site](https://www.laserpecker.net/) or [Chinese site](http://www.laserpecker.cn/). 
+For more details, visit their official [English site](https://www.laserpecker.net/) or [Chinese site](http://www.laserpecker.cn/).
 
 
 ## Compatibility
@@ -16,10 +16,10 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 
 ## Installation
 
-1) Install Inkscape 0.92. Inkscape 1.0 is not supported yet.
-2) Copy **laserpecker.inx** and **laserpecker.py** from `extension` directory into...
+1) Install Inkscape v0.92 or v1.0
+2) Depending on your Inkscape version and operating system, copy **laserpecker.inx** and **laserpecker.py** from `extension/0.92` or `extension/1.0` directory into...
 	* For Linux: `~/.config/inkscape/extensions/`
-	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` > click `Open` 
+	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` > click `Open`
 	* For Windows: `C:\Program Files\Inkscape\share\extensions\`
 3) Restart Inkscape and you should be able to access the extension from "Extensions" > "LaserPecker" > "Gcode Generator for L1/Pro"
 
@@ -32,7 +32,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 * Engraving area is limited to 100mm x 100mm in size.
 * This extension warns if the target graphics are larger than 100mm x 100mm, and you should scale it down and try again.
 * The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates range from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area, from (-100,-70) to (100,70) as I manually tested, it is limited to 100mm x 100mm by the App and the machine to minimise distortion and ensure consistent engraving quality. See [engraving_over_200mm_x_140mm.mp4](misc/engraving_over_200mm_x_140mm.mp4) and [engraving_over_200mm_x_140mm.jpg](misc/engraving_over_200mm_x_140mm.jpg) for a demo.
-* The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting Gcode coordinates are centred to the origin (0,0).  
+* The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting Gcode coordinates are centred to the origin (0,0).
 * Output Gcode file should end in `.txt`. The extension does not normally matter, as it's just a plain text file, but here `.txt` is what's recognised as Gcode files by LaserPecker App.
 * Output Gcode file should not exceed 1MB in size. This is a hard limit by the engraver's memory.
 
@@ -56,7 +56,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 6) The vectorised image is stacked on top of your bitmap image. (Optional: Move it away, and then select and delete your bitmap image underneath to avoid confusion.)
 7) It does not matter where you position the vectorised graphics, as long as its size is within 100mm x 100mm. Use the W and H values displayed in the tool bar to help scale your graphics.
 8) Select all of your shapes if you have more than one. They do not have to be grouped. Now, just in case, double convert them to path from "Path" > "Object to Path".
-9) "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator" 
+9) "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator"
 10) Fill in the values as prompted and click "Apply" to generator Gcode.
 11) The auto generated markers over your grapgics can be deleted.
 
@@ -79,7 +79,7 @@ There are three options you can tweak:
 It is that easy! After filling your shape, generate Gcode as you would and optionally inspect your Gcode (read the next section) before engraving.
 
 
-## Bonus: Inspect Generated Gcode
+## Optional: Inspect Generated Gcode
 
 [Click here for a video demo](tutorial/inspect_gcode.mp4)
 
@@ -105,11 +105,11 @@ I have included a few sample images for you to test convert to Gcode and engrave
 
 ## Helper Files
 
-In `gcode` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
+In `testing` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
 
-* `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed). 
+* `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed).
 * `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your material, consider cutting multiple times.
-* `sample_result.jpg`: Test results on a recycled paper. 
+* `sample_result.jpg`: Test results on a recycled paper.
 
 In `misc` directory, there are several sets of `markers` files. Each set has the following files:
 * `.svg`: The SVG file of the markers. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engraving distortion and sizing.
