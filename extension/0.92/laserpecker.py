@@ -2430,8 +2430,12 @@ class laser_gcode(inkex.Effect):
                             y_max = y
                         if y_min is None or y < y_min:
                             y_min = y
-        width = x_max - x_min
-        height = y_max - y_min
+        try:
+            width = x_max - x_min
+            height = y_max - y_min
+        except:
+            self.error(_("No data. Check your selection and make sure object is converted to path." % (width, height)),"error")
+            return ""
         if width > 100.1 or height > 100.1:
             self.error(_("Graphics are too big: %.1f x %.1f.\n\nScale it down to within 100x100 for LaserPecker to function properly." % (width, height)),"error")
             return ""
