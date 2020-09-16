@@ -585,12 +585,8 @@ class LaserGcode(inkex.Effect):
                             y_max = y
                         if y_min is None or y < y_min:
                             y_min = y
-        try:
-            width = x_max - x_min
-            height = y_max - y_min
-        except:
-            self.error(_("No data. Check your selection and make sure object is converted to path." % (width, height)),"error")
-            return ""
+        width = x_max - x_min
+        height = y_max - y_min
         if width > 100.1 or height > 100.1:
             self.error(_("Graphics are too big: %.1f x %.1f.\n\nScale it down to within 100x100 for LaserPecker to function properly." % (width, height)),"error")
             return ""
@@ -952,7 +948,7 @@ class LaserGcode(inkex.Effect):
         while (g != root):
             if 'transform' in list(g.keys()):
                 t = g.get('transform')
-                t = simpletransform.parseTransform(t)
+                t = Transform(t).matrix
                 trans = simpletransform.composeTransform(t, trans) if trans != [] else t
                 print_(trans)
             g = g.getparent()
@@ -962,7 +958,7 @@ class LaserGcode(inkex.Effect):
     def apply_transforms(self, g, csp):
         trans = self.get_transforms(g)
         if trans != []:
-            simpletransform.applyTransformToPath(trans, csp)
+            Path(csp).transform(trans)
         return csp
 
 
@@ -1320,7 +1316,7 @@ class LaserGcode(inkex.Effect):
 
         if self.selected_paths == {}:
             paths = self.paths
-            self.error(_("No paths are selected! Trying to work on all available paths."), "warning")
+            self.error(_("No path selected. Work on all available paths."), "warning")
         else:
             paths = self.selected_paths
 
