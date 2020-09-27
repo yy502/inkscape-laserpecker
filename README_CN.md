@@ -85,6 +85,29 @@ Gcode文件生成以后，
 * **iOS：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
 
 
+## 将黑白图转换为单线骨架图
+
+### Inkscape 0.92 用户
+1) 依照[此处说明(TL;DR部分)](https://github.com/yy502/autotrace#tldr)编译并安装`autotrace`工具。 (仅限Linux平台)
+2) 使用以上说明中的命令将位图（推荐png格式）转换为svg矢量图。
+3) 使用上面的Gcode插件为激光啄木鸟生成Gcode文件。
+	* 注意在改变矢量图案尺寸的时候可以忽略`autotrace`默认的px（像素）单位，不需要改变成mm。所以长x宽的数字值在100x100范围以内就可以了。插件在转换Gcode的时候会默认以mm为单位。
+4) 在生成Gcode的过程中可能会跳出一些警告信息，可以忽略。如果Gcode文件成功生成，你的图上会出现一层令人不安的巨大的箭头图案。你可以移动或删除这一图层，它只是显示激光所走的路径顺序。
+
+### Inkscape 1.0 users
+1) autotrace工具已经内置! \o/
+2) 运行Inkscape，把你要转换的图拖进去。暂时不需要担心图像尺寸。
+3) 选中图案，从`Path`（路径？）菜单选择 `Trace Bitmap`。 在弹出窗口的下拉菜单中切换到 `Centerline tracing (autotrace)`模式。使用默认设置应该就可以了。最后点 `OK`按钮。
+4) 生成的单线图案重叠在位图上方，不容易看到。你可以点选它并拖到空白处。
+5) 保持选中生成的矢量线图，在工具栏上方锁定比例并且调整图案尺寸到不超过100x100mm。
+6) 使用上面的Gcode插件为激光啄木鸟生成Gcode文件。
+7) 在生成Gcode的过程中可能会跳出一些警告信息，可以忽略。如果Gcode文件成功生成，你的图上会出现一层令人不安的巨大的箭头图案。你可以移动或删除这一图层，它只是显示激光所走的路径顺序。
+
+<img src="tutorial/centerline_01.png" width="800px">
+<img src="tutorial/centerline_02.png" width="800px">
+
+
+
 ## 例图
 
 我在`sample_images`文件夹中存了一些适合切割的图片。我没有直接提供Gcode文件的原因，是想留给你在生成Gcode文件时可以选择最适合你的切割材料的设置的机会。
