@@ -98,6 +98,26 @@ Once the `.txt` Gcode files are generated...
 * **iOS:** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
 
 
+## Convert B&W Images to Single Line Sketches
+
+### Inkscape 0.92 users
+1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace) to compile & install `autotrace` (linux-only I'm afraid).
+2) Use the single-line command shown in the link above to convert your bitmap (png) image to svg
+3) Use this Gcode extension to generate Gcode for LaserPecker.
+
+### Inkscape 1.0 users
+1) Inkscape 1.0 has this amazing tool built-in! \o/
+2) Launch Inkscape, drag and drop a B&W image into Inkscape canvas. Don't need to worry about resizing it for now.
+3) Click to select the image, go to `Path` menu, then `Trace Bitmap`. From the drop-down list, select `Centerline tracing (autotrace)`. Leave other settings as default should be fine. Finally click `OK`.
+4) The generated centerline trace is overlpping the original image, so it's not easily visible. Click on the image and drag it down to see the line trace on its own.
+5) With this line trace selected, go to the top tool bar, lock aspect ratio and resize selection to witin 100x100 mm.
+6) Finally use this Gcode extension to generate Gcode for LaserPecker.
+7) Note that you may see some warning messages during generation. As long as there's no error, you can ignore them. In the end, if you see some horrible overlay of arrows appear on top of your graphic, the Gcode is generated OK, and you can move or delete this layer as you wish.
+
+<img src="tutorial/centerline_01.png" width="800px">
+<img src="tutorial/centerline_02.png" width="800px">
+
+
 ## Sample Images
 
 I have included a few sample images for you to test convert to Gcode and engrave with LaserPecker. The reason why I did not include any sample Gcode is because you will need to choose the best settings (power,speed) for your material at the point of generation.
