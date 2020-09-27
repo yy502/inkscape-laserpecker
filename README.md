@@ -101,7 +101,7 @@ Once the `.txt` Gcode files are generated...
 ## Convert B&W Images to Single Line Sketches
 
 ### Inkscape 0.92 users
-1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace) to compile & install `autotrace` (linux-only I'm afraid).
+1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace#tldr) to compile & install `autotrace` (linux-only I'm afraid).
 2) Use the single-line command shown in the link above to convert your bitmap (png) image to svg
 3) Use this Gcode extension to generate Gcode for LaserPecker.
 
