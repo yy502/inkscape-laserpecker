@@ -68,23 +68,6 @@
 * **Crosshatch:** 交叉填充或者平行线填充。注意交叉填充的路径是平行填充的2倍，所以雕刻时间就是2倍。
 
 
-
-## 可选步骤：检测生成的Gcode
-
-1) 打开Gcode文件
-2) 复制所有内容
-3) 访问[NC Viewer](https://ncviewer.com/)
-4) 清除左边已经有的示范Gcode，把你的Gcode贴进去
-5) 点下面的"Plot"按钮就可以看到图形化的Gcode路径了。
-
-
-## 传送Gcode文件到手机
-
-Gcode文件生成以后，
-* **安卓手机：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
-* **iOS：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
-
-
 ## 将黑白图转换为单线骨架图
 
 ### Inkscape 0.92 用户
@@ -106,6 +89,21 @@ Gcode文件生成以后，
 <img src="tutorial/centerline_01.png" width="800px">
 <img src="tutorial/centerline_02.png" width="800px">
 
+
+## 可选步骤：检测生成的Gcode
+
+1) 打开Gcode文件
+2) 复制所有内容
+3) 访问[NC Viewer](https://ncviewer.com/)
+4) 清除左边已经有的示范Gcode，把你的Gcode贴进去
+5) 点下面的"Plot"按钮就可以看到图形化的Gcode路径了。
+
+
+## 传送Gcode文件到手机
+
+Gcode文件生成以后，
+* **安卓手机：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
+* **iOS：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
 
 
 ## 例图
