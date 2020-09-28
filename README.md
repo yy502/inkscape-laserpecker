@@ -68,7 +68,8 @@ You may have noticed that only the edges of your graphic are converted to paths,
 Here is how:
 
 * you need to download and install KM-Laser extension ([for Inkscape 0.92](https://github.com/KnoxMakers/KM-Laser/tree/pre_0.92), [for Inkscape 1.0](https://github.com/KnoxMakers/KM-Laser))
-* and learn how to fill your shape with lines by watching this video tutorial: https://www.youtube.com/watch?v=qdIjZXzT-QE
+* and learn how to fill your shape with lines by watching this video tutorial:
+[![](https://img.youtube.com/vi/qdIjZXzT-QE/0.jpg)](https://www.youtube.com/watch?v=qdIjZXzT-QE)
 
 There are three options you can tweak:
 
