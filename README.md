@@ -16,7 +16,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 
 ## Installation
 
-1) Install Inkscape v0.92 or v1.0
+1) Install Inkscape v0.92 or v1.0 (use v1.0 if you can)
 2) Depending on your Inkscape version and operating system, copy **laserpecker.inx** and **laserpecker.py** from `extension/0.92` or `extension/1.0` directory into...
 	* For Linux: `~/.config/inkscape/extensions/`
 	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` > click `Open`
@@ -146,7 +146,7 @@ However, the oversize engraving result has been inconsistent around the far ends
 
 
 ## Credit
-This extension is based on [J Tech Laser Tool Plugin V 2_2 for Inkscape 0.92](https://jtechphotonics.com/?page_id=1980) for laser engraving and cutting.
+This extension is based on [J Tech Laser Tool Plugin V 2_2 for Inkscape](https://jtechphotonics.com/?page_id=1980) for laser engraving and cutting.
 
 
 ## License
