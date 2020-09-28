@@ -70,6 +70,8 @@
 
 ## 将黑白图转换为单线骨架图
 
+[视频演示点此处](tutorial/image_to_single_line_to_gcode.mp4)
+
 ### Inkscape 0.92 用户
 1) 依照[此处说明(TL;DR部分)](https://github.com/yy502/autotrace#tldr)编译并安装`autotrace`工具。 (仅限Linux平台)
 2) 使用以上说明中的命令将位图（推荐png格式）转换为svg矢量图。

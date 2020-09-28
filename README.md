@@ -81,6 +81,8 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Convert B&W Images to Single Line Sketches
 
+[Click here for a video tutorial](tutorial/image_to_single_line_to_gcode.mp4)
+
 ### Inkscape 0.92 users
 1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace#tldr) to compile & install `autotrace` (linux-only I'm afraid).
 2) Use the single-line command shown in the link above to convert your bitmap (png) image to svg
