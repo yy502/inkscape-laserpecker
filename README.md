@@ -79,25 +79,6 @@ There are three options you can tweak:
 It is that easy! After filling your shape, generate Gcode as you would and optionally inspect your Gcode (read the next section) before engraving.
 
 
-## Optional: Inspect Generated Gcode
-
-[Click here for a video demo](tutorial/inspect_gcode.mp4)
-
-1) Open up the generated file with a text editor
-2) Select all texts and copy
-3) Open [NC Viewer](https://ncviewer.com/)
-4) Clear the sample Gcode and paste your Gcode in
-5) Click the blue "Plot" button to visualise your Gcode.
-
-
-## Sending Gcode Files to App
-
-Once the `.txt` Gcode files are generated...
-
-* **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
-* **iOS:** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
-
-
 ## Convert B&W Images to Single Line Sketches
 
 ### Inkscape 0.92 users
@@ -118,6 +99,25 @@ Once the `.txt` Gcode files are generated...
 
 <img src="tutorial/centerline_01.png" width="800px">
 <img src="tutorial/centerline_02.png" width="800px">
+
+
+## Optional: Inspect Generated Gcode
+
+[Click here for a video demo](tutorial/inspect_gcode.mp4)
+
+1) Open up the generated file with a text editor
+2) Select all texts and copy
+3) Open [NC Viewer](https://ncviewer.com/)
+4) Clear the sample Gcode and paste your Gcode in
+5) Click the blue "Plot" button to visualise your Gcode.
+
+
+## Sending Gcode Files to App
+
+Once the `.txt` Gcode files are generated...
+
+* **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
+* **iOS:** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
 
 
 ## Sample Images
