@@ -13,7 +13,7 @@
 
 ## 安装方法
 
-1) 安装Inkscape 0.92或1.0版。
+1) 安装Inkscape 0.92或1.0版。（建议使用1.0版）
 2) 取决于你的Inkscape版本以及操作系统，复制`extension/0.92`或`extension/1.0`文件夹中的**laserpecker.inx**和**laserpecker.py**文件到...
 	* Linux: `~/.config/inkscape/extensions/`
 	* MacOS: 运行Inkscape > `Preferences` > `System` > 找到`User extensions`然后点击`Open`打开文件夹。
@@ -129,7 +129,7 @@ Gcode文件生成以后，
 
 ## 声明
 
-这个插件是在[J Tech Laser Tool Plugin V 2_2 for inkscape 0.92](https://jtechphotonics.com/?page_id=1980)的基础上为激光啄木鸟改进和优化的。
+这个插件是在[J Tech Laser Tool Plugin V 2_2 for Inkscape](https://jtechphotonics.com/?page_id=1980)的基础上为激光啄木鸟改进和优化的。
 
 
 ## 使用许可
