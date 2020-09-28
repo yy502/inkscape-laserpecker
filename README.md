@@ -56,9 +56,9 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 6) The vectorised image is stacked on top of your bitmap image. (Optional: Move it away, and then select and delete your bitmap image underneath to avoid confusion.)
 7) It does not matter where you position the vectorised graphics, as long as its size is within 100mm x 100mm. Use the W and H values displayed in the tool bar to help scale your graphics.
 8) Select all of your shapes if you have more than one. They do not have to be grouped. Now, just in case, double convert them to path from "Path" > "Object to Path".
-9) "Extensions" > "LaserPecker" > "LaserPecker Gcode Generator"
-10) Fill in the values as prompted and click "Apply" to generator Gcode.
-11) The auto generated markers over your grapgics can be deleted.
+9) `Extensions` > `LaserPecker` > `LaserPecker Gcode Generator`
+10) Fill in the values as prompted and click `Apply` to generator Gcode.
+11) Ignore any warnings. The auto generated markers overlay on top of your grapgics can be deleted.
 
 
 ## Filling Your Shapes With Lines
