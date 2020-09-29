@@ -39,7 +39,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 
 ## Image to Gcode
 
-[Click here for a video tutorial](tutorial/image_to_gcode.mp4)
+[![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) Launch Inkscape.
 2) Import an image, preferably a black and white image onto the blank canvas.
@@ -82,7 +82,8 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Convert B&W Images to Single Line Sketches
 
-[Click here for a video tutorial](tutorial/image_to_single_line_to_gcode.mp4)
+[![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
+
 
 ### Inkscape 0.92 users
 1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace#tldr) to compile & install `autotrace` (linux-only I'm afraid).
@@ -106,7 +107,7 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Optional: Inspect Generated Gcode
 
-[Click here for a video demo](tutorial/inspect_gcode.mp4)
+[![](https://img.youtube.com/vi/yJpaMI9OOb0/0.jpg)](https://www.youtube.com/watch?v=yJpaMI9OOb0)
 
 1) Open up the generated file with a text editor
 2) Select all texts and copy

@@ -34,7 +34,7 @@
 
 ## 位图转Gcode操作流程
 
-[视频演示点此处](tutorial/image_to_gcode.mp4)
+[![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) 运行Inkscape
 2) 导入图像
@@ -71,7 +71,7 @@
 
 ## 将黑白图转换为单线骨架图
 
-[视频演示点此处](tutorial/image_to_single_line_to_gcode.mp4)
+[![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
 
 ### Inkscape 0.92 用户
 1) 依照[此处说明(TL;DR部分)](https://github.com/yy502/autotrace#tldr)编译并安装`autotrace`工具。 (仅限Linux平台)
@@ -94,6 +94,8 @@
 
 
 ## 可选步骤：检测生成的Gcode
+
+[![](https://img.youtube.com/vi/yJpaMI9OOb0/0.jpg)](https://www.youtube.com/watch?v=yJpaMI9OOb0)
 
 1) 打开Gcode文件
 2) 复制所有内容
