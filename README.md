@@ -40,6 +40,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 ## Image to Gcode
 
 Click to watch video tutorial:
+
 [![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) Launch Inkscape.
@@ -84,6 +85,7 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 ## Convert B&W Images to Single Line Sketches
 
 Click to watch video tutorial:
+
 [![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
 
 
@@ -110,6 +112,7 @@ Click to watch video tutorial:
 ## Optional: Inspect Generated Gcode
 
 Click to watch video tutorial:
+
 [![](https://img.youtube.com/vi/yJpaMI9OOb0/0.jpg)](https://www.youtube.com/watch?v=yJpaMI9OOb0)
 
 1) Open up the generated file with a text editor
