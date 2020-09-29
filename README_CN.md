@@ -34,6 +34,7 @@
 
 ## 位图转Gcode操作流程
 
+点击观看演示视频：
 [![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) 运行Inkscape
@@ -59,7 +60,7 @@
 你应该已经注意到了我们生成的Gcode是图形的外框。这个适用于切割，但是如果我们想要用Gcode来雕刻原始图像的话，就需要用到另外一个插件来用直线填充有色的图形部分了。
 
 首先，下载并安装KM-Laser插件([for Inkscape 0.92](https://github.com/KnoxMakers/KM-Laser/tree/pre_0.92), [for Inkscape 1.0](https://github.com/KnoxMakers/KM-Laser))。注意`extensions`和`palettes`内的文件都要复制。然后观看这个演示视频学习怎么使用这个填充插件：
-[![](https://img.youtube.com/vi/qdIjZXzT-QE/0.jpg)](https://www.youtube.com/watch?v=qdIjZXzT-QE)
+[![](https://img.youtube.com/vi/2Ee6yDaLod4/0.jpg)](https://www.youtube.com/watch?v=2Ee6yDaLod4)
 
 
 这个填充插件有三个设置值得尝试：
@@ -71,6 +72,7 @@
 
 ## 将黑白图转换为单线骨架图
 
+点击观看演示视频：
 [![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
 
 ### Inkscape 0.92 用户
@@ -95,6 +97,7 @@
 
 ## 可选步骤：检测生成的Gcode
 
+点击观看演示视频：
 [![](https://img.youtube.com/vi/yJpaMI9OOb0/0.jpg)](https://www.youtube.com/watch?v=yJpaMI9OOb0)
 
 1) 打开Gcode文件

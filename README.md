@@ -39,6 +39,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 
 ## Image to Gcode
 
+Click to watch video tutorial:
 [![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) Launch Inkscape.
@@ -69,9 +70,9 @@ Here is how:
 
 * you need to download and install KM-Laser extension ([for Inkscape 0.92](https://github.com/KnoxMakers/KM-Laser/tree/pre_0.92), [for Inkscape 1.0](https://github.com/KnoxMakers/KM-Laser))
 * and learn how to fill your shape with lines by watching this video tutorial:
-[![](https://img.youtube.com/vi/qdIjZXzT-QE/0.jpg)](https://www.youtube.com/watch?v=qdIjZXzT-QE)
+[![](https://img.youtube.com/vi/2Ee6yDaLod4/0.jpg)](https://www.youtube.com/watch?v=2Ee6yDaLod4)
 
-There are three options you can tweak:
+There are three options you can/should tweak:
 
 * **Hatch spacing:** first to reduce your shape stroke thickness to very low, so you can see the paths clearly. Then enable live preview and try out different spacing for your desired effect.
 * **Hatch angle:** commonly we use 0 or 45 degrees.
@@ -82,6 +83,7 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Convert B&W Images to Single Line Sketches
 
+Click to watch video tutorial:
 [![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
 
 
@@ -107,6 +109,7 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Optional: Inspect Generated Gcode
 
+Click to watch video tutorial:
 [![](https://img.youtube.com/vi/yJpaMI9OOb0/0.jpg)](https://www.youtube.com/watch?v=yJpaMI9OOb0)
 
 1) Open up the generated file with a text editor
