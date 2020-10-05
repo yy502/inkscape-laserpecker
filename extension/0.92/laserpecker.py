@@ -92,7 +92,7 @@ G90
 ;all units in mm
 G21
 ;move fast
-G1 F3000
+G1 F3000.0
 
 """,
 'footer': ";return to origin\nG1 X0 Y0\n"
@@ -2664,7 +2664,7 @@ class laser_gcode(inkex.Effect):
         for i in range(1,len(curve)):
         #    Creating Gcode for curve between s=curve[i-1] and si=curve[i] start at s[0] end at s[4]=si[0]
             s, si = curve[i-1], curve[i]
-            speed = 'F'+str(self.options.laser_speed) if lg not in ['G01','G02','G03'] else ''
+            speed = 'F'+str(self.options.laser_speed)+'.0' if lg not in ['G01','G02','G03'] else ''
             if s[1]    == 'move':
                 g += "G1 " + c(si[0]) + "\n" + tool['gcode before path'] + "\n"
                 lg = 'G00'
@@ -3169,7 +3169,7 @@ class laser_gcode(inkex.Effect):
             "id": "LaserPecker Engraver",
             "speed": self.options.laser_speed,
             "gcode before path": "G4 P0\n;laser on\nM03 S%d\nG4 P0\n" % self.options.laser_power,
-            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000\n",
+            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
         }
 
         self.get_info()
