@@ -3169,7 +3169,7 @@ class laser_gcode(inkex.Effect):
             "id": "LaserPecker Engraver",
             "speed": self.options.laser_speed,
             "gcode before path": "G4 P0\n;laser on\nM03 S%d\nG4 P0\n" % self.options.laser_power,
-            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
+            "gcode after path": "\nG4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
         }
 
         self.get_info()
