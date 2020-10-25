@@ -137,10 +137,7 @@ G21
 G1 F3000.0
 
 """,
-    'footer': """;return to origin
-G1 X0 Y0
-
-"""
+    'footer': "\n;return to origin\nG1 X0.0 Y0.0\n"
 }
 
 intersection_recursion_depth = 10
@@ -1455,8 +1452,8 @@ class LaserGcode(inkex.Effect):
             "name": "LaserPecker Engraver",
             "id": "LaserPecker Engraver",
             "speed": self.options.laser_speed,
-            "gcode before path": "G4 P0\n;laser on\nM03 S%d\nG4 P0\n" % self.options.laser_power,
-            "gcode after path": "\nG4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
+            "gcode before path": ";laser on\nM03 S%d\nG4 P0" % self.options.laser_power,
+            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
         }
 
         self.get_info()
