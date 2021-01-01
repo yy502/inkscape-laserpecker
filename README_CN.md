@@ -17,7 +17,7 @@
 2) 取决于你的Inkscape版本以及操作系统，复制`extension/0.92`或`extension/1.0`文件夹中的`laserpecker.inx`和`laserpecker.py`文件到...
 	* Linux: `~/.config/inkscape/extensions/`
 	* MacOS: 运行Inkscape > `Preferences` > `System` > 找到`User extensions`然后点击`Open`打开文件夹。
-	* Windows: `C:\Program Files\Inkscape\share\extensions\`
+	* Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
 3) 重启Inkscape，插件应该在`扩展`菜单下的`LaserPecker` > `Gcode Generator for L1/Pro`
 
 ## 设置和限制
@@ -114,8 +114,8 @@
 ## 传送Gcode文件到手机
 
 Gcode文件生成以后，
-* **安卓手机：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
-* **iOS：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
+* **安卓：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
+* **iOS(二手信息，未验证)：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
 
 
 ## 例图
