@@ -20,7 +20,7 @@ This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and
 2) Depending on your Inkscape version and operating system, copy `laserpecker.inx` and `laserpecker.py` from `extension/0.92` or `extension/1.0` directory into...
 	* For Linux: `~/.config/inkscape/extensions/`
 	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` > click `Open`
-	* For Windows: `C:\Program Files\Inkscape\share\extensions\`
+	* For Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
 3) Restart Inkscape and you should be able to access the extension from `Extensions` > `LaserPecker` > `Gcode Generator for L1/Pro`
 
 
@@ -127,7 +127,7 @@ Click to watch video tutorial:
 Once the `.txt` Gcode files are generated...
 
 * **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
-* **iOS:** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
+* **iOS (2nd-hand info, not verified):** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
 
 
 ## Sample Images
