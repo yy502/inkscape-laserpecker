@@ -143,7 +143,7 @@ In `testing` directory, I have created some Gcode files to help you quickly test
 * `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your material, consider cutting multiple times.
 * `sample_result.jpg`: Test results on a recycled paper.
 
-In `misc` directory, there are several sets of `markers` files. Each set has the following files:
+In `resources` directory, there are several sets of `markers` files. Each set has the following files:
 * `.svg`: The SVG file of the markers. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engraving distortion and sizing.
 * `.txt`: Gcode for the markers with speed=500 and power=200. This is MUCH faster than using a bitmap image to engrave the markers over the 100mm x 100mm area.
 * `.png`: PNG image of the markers only for quick preview. I do not suggest engraving this as it's MUCH slower than using Gcode.
