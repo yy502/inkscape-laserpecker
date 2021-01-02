@@ -127,8 +127,7 @@ Click to watch video tutorial:
 Once the `.txt` Gcode files are generated...
 
 * **Android:** copy to `(phone storage) > laserpecker files` directory in your phone. This is also where additional custom fonts (`.ttf` files) live.
-* **iOS (2nd-hand info, not verified):** copy to `(Files App)> Laserpecker > matarialgcode` directory (yes, the directory name is misspelt).
-
+* **iOS (2nd-hand info, not verified):** copy to `Files > Laserpecker > matarialgcode directory` (yes, the directory name is misspelt by LP). **Or** use the **Share** function. The Gcode files can be in any directory in the `Files` app. It can be in Dropbox, iCloud, any location accessible by `Files`. Then select the Gcode file within `Files`, click **Share** button, and select LaserPecker App to share to.
 
 ## Sample Images
 
