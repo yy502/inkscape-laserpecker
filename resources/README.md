@@ -8,15 +8,15 @@ Finally use the LaserPecker Gcode extension to generate a Gcode file.
 
 Grid 1
 
-<img src="resources/grid_1.png" width="200px">
+<img src="grid_1.png" width="200px">
 
 Grid 2
 
-<img src="resources/grid_2.png" width="200px">
+<img src="grid_2.png" width="200px">
 
 Grid 3
 
-<img src="resources/grid_3.png" width="200px">
+<img src="grid_3.png" width="200px">
 
 ## [See here for instructions on how to send Gcode files to your LP app](https://github.com/yy502/inkscape-laserpecker#sending-gcode-files-to-app)
 
