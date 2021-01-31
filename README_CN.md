@@ -114,9 +114,10 @@
 ## 传送Gcode文件到手机
 
 Gcode文件生成以后，
-* **安卓：** 复制`.txt`文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
-* **iOS(二手信息，未验证)：** 复制`.txt`文件到`(Files App)> Laserpecker > matarialgcode`文件夹中。
+* **安卓：** 复制Gcode文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
+* **iOS：** 通过任何网盘App上传Gcode文件，在iOS设备下载或导出Gcode文件，选择用**Files** App打开并保存到`Laserpecker > matarialgcode`文件夹中。
 
+最后打开啄木鸟App，在Examples页面的G-code分页中可以找到上传的Gcode文件进行雕刻。
 
 ## 例图
 
