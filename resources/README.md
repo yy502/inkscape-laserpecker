@@ -6,15 +6,15 @@ For each grid, there are 3 files:
 Finally use the LaserPecker Gcode extension to generate a Gcode file. 
 * `.txt`: ready made Gcode file with hard-coded power/speed setting that should work on most materials.
 
-Grid 1
+Grid 1 [[Gcode]](grid_1.txt) [[PNG]](grid_1.png)
 
 <img src="grid_1.png" width="200px">
 
-Grid 2
+Grid 2 [[Gcode]](grid_2.txt) [[PNG]](grid_2.png)
 
 <img src="grid_2.png" width="200px">
 
-Grid 3
+Grid 3 [[Gcode]](grid_3.txt) [[PNG]](grid_3.png)
 
 <img src="grid_3.png" width="200px">
 
