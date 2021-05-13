@@ -612,10 +612,9 @@ class LaserGcode(inkex.Effect):
         return ";width:%.1f mm\n;height:%.1f mm\n\n" % (width, height) + _gcode
 
     def export_gcode(self, gcode):
-        f = open(self.options.directory+self.options.file, "w")
-        f.write(self.header + self.center_gcode(gcode) + self.footer)
-        #f.write(self.header + gcode + self.footer)
-        f.close()
+        with open(self.options.directory+self.options.file, "w") as f:
+            f.write(self.header + self.center_gcode(gcode) + self.footer)
+            #f.write(self.header + gcode + self.footer)
 
     def add_arguments_old(self):
         add_option = self.OptionParser.add_option

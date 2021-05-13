@@ -2456,10 +2456,9 @@ class laser_gcode(inkex.Effect):
         return ";width:%.1f mm\n;height:%.1f mm\n\n" % (width, height) + _gcode
 
     def export_gcode(self, gcode):
-        f = open(self.options.directory+self.options.file, "w")
-        f.write(self.header + self.center_gcode(gcode) + self.footer)
-        #f.write(self.header + gcode + self.footer)
-        f.close()
+        with open(self.options.directory+self.options.file, "w") as f:
+            f.write(self.header + self.center_gcode(gcode) + self.footer)
+            #f.write(self.header + gcode + self.footer)
 
     def __init__(self):
         inkex.Effect.__init__(self)
