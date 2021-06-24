@@ -1,7 +1,7 @@
 [中文介绍点此处](README_CN.md)
 
 # LaserPecker Extension for Inkscape
-This is a Gcode generator extension for Inkscape, tailored for LaserPecker L1 and L1 Pro. The LaserPecker App has a built-in Gcode converter with capability of line-filling, which is pretty easy to use. This extension allows you to manually set power and speed beyond the App's limitations with Gcode values. (Hardware limitations still apply. Read on...)
+This is a Gcode generator extension for Inkscape, tailored for LaserPecker L1, Pro and LP2. The LaserPecker App has a built-in Gcode converter with capability of line-filling, which is pretty easy to use. This extension allows you to manually set power and speed beyond the App's limitations with Gcode values. (Hardware limitations still apply. Read on...)
 
 
 ## LaserPecker
@@ -11,7 +11,7 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 
 ## Compatibility
 
-This extension has been tested with LaserPecker L1 and L1 Pro. There are 2nd and 3rd generations to be released soon, and I will keep updating this extension to support those.
+This extension has been tested with LaserPecker L1, Pro and LP2.
 
 
 ## Installation
