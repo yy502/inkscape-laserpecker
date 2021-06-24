@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <_name>Gcode Generator for L1/Pro</_name>
+    <_name>Gcode Generator for L1/Pro/LP2</_name>
     <id>laserpecker</id>
 	<dependency type="executable" location="extensions">laserpecker.py</dependency>
 
