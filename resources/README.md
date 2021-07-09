@@ -18,7 +18,7 @@ Grid 3 [[Gcode]](grid_3.txt) [[PNG]](grid_3.png)
 
 <img src="grid_3.png" width="250px">
 
-Grid 3 [[Gcode]](grid_4.txt) [[PNG]](grid_4.png)
+Grid 4 [[Gcode]](grid_4.txt) [[PNG]](grid_4.png)
 
 <img src="grid_4.png" width="250px">
 
