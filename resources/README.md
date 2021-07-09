@@ -18,6 +18,10 @@ Grid 3 [[Gcode]](grid_3.txt) [[PNG]](grid_3.png)
 
 <img src="grid_3.png" width="200px">
 
+Grid 3 [[Gcode]](grid_4.txt) [[PNG]](grid_4.png)
+
+<img src="grid_4.png" width="200px">
+
 ## [See here for instructions on how to send Gcode files to your LP app](https://github.com/yy502/inkscape-laserpecker#sending-gcode-files-to-app)
 
 Don't worry if you don't follow it, or just want some very quick grid as long as it's helpful. Do the following with grid 1 or 2:
