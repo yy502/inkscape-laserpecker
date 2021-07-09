@@ -8,19 +8,19 @@ Finally use the LaserPecker Gcode extension to generate a Gcode file.
 
 Grid 1 [[Gcode]](grid_1.txt) [[PNG]](grid_1.png)
 
-<img src="grid_1.png" width="200px">
+<img src="grid_1.png" width="250px">
 
 Grid 2 [[Gcode]](grid_2.txt) [[PNG]](grid_2.png)
 
-<img src="grid_2.png" width="200px">
+<img src="grid_2.png" width="250px">
 
 Grid 3 [[Gcode]](grid_3.txt) [[PNG]](grid_3.png)
 
-<img src="grid_3.png" width="200px">
+<img src="grid_3.png" width="250px">
 
 Grid 3 [[Gcode]](grid_4.txt) [[PNG]](grid_4.png)
 
-<img src="grid_4.png" width="200px">
+<img src="grid_4.png" width="250px">
 
 ## [See here for instructions on how to send Gcode files to your LP app](https://github.com/yy502/inkscape-laserpecker#sending-gcode-files-to-app)
 
