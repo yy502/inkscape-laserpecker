@@ -34,25 +34,26 @@ This extension has been tested with LaserPecker L1, Pro and LP2.
 * The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates range from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area, from (-100,-70) to (100,70) as I manually tested, it is limited to 100mm x 100mm by the App and the machine to minimise distortion and ensure consistent engraving quality. See [engraving_over_200mm_x_140mm.mp4](misc/engraving_over_200mm_x_140mm.mp4) and [engraving_over_200mm_x_140mm.jpg](misc/engraving_over_200mm_x_140mm.jpg) for a demo.
 * The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting Gcode coordinates are centred to the origin (0,0).
 * Output Gcode file should end in `.txt`. The extension does not normally matter, as it's just a plain text file, but here `.txt` is what's recognised as Gcode files by LaserPecker App.
-* Output Gcode file should not exceed 1MB in size. This is a hard limit by the engraver's memory.
+* **Note**
+  * Generated Gcode file should not exceed 1MB each for L1/Pro, 4MB for LP2. This is a hard limit by the engravers' memory.
+  * You can use arbitrary settings for *power* and *speed* if you are generating **Gcode for LP2**, because these settings will be overridden by the app's power and depth settings. For L1/Pro, choose your settings carefully at generation time as these can't be changed via the app.
 
 
 ## Image to Gcode
 
-Click to watch video tutorial:
+Click to watch video tutorial (using Inkscape 0.92, v1.x looks slightly different):
 
 [![](https://img.youtube.com/vi/neA5kYvSX6w/0.jpg)](https://www.youtube.com/watch?v=neA5kYvSX6w)
 
 1) Launch Inkscape.
 2) Import an image, preferably a black and white image onto the blank canvas.
 3) Select the image, then "Path" > "Trace Bitmap"
-4) Use the following optimal settings:
+4) Use the following optimal settings (using Inkscape 0.92, v1.x is slightly different):
+	* Inkscape v1.x: use "Multiple scans > Colours"
 	* Colours: 2
 	* Scans: 2
-	* Smooth: check
-	* Stack scans: check
 	* Remove background: check
-	* Live Preview: check
+	* Live Preview: check (Inkscape v1.x: click "Update" button to preview)
 	* the rest is up to you to poke around and figure out what's best for your image.
 5) Click "OK" button **once** and close this pop up.
 6) The vectorised image is stacked on top of your bitmap image. (Optional: Move it away, and then select and delete your bitmap image underneath to avoid confusion.)
