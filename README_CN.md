@@ -15,9 +15,9 @@
 1) 安装Inkscape 0.92或1.0版。（建议使用1.0版）
 2) 取决于你的Inkscape版本以及操作系统，复制`extension/0.92`或`extension/1.0`文件夹中的`laserpecker.inx`和`laserpecker.py`文件到...
 	* Linux: `~/.config/inkscape/extensions/`
-	* MacOS: 运行Inkscape > `Preferences` > `System` > 找到`User extensions`然后点击`Open`打开文件夹。
+	* MacOS: 运行Inkscape > `首选项` > `系统` > 找到`用户扩展`然后点击`打开`打开文件夹。
 	* Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
-3) 重启Inkscape，插件应该在`扩展`菜单下的`LaserPecker` > `Gcode Generator for L1/Pro`
+3) 重启Inkscape，插件应该在`扩展`菜单下的`LaserPecker` > `Gcode Generator for L1/Pro/LP2`
 
 ## 设置和限制
 
@@ -29,7 +29,9 @@
 * 雕刻原点 (0,0) 在100mm x 100mm雕刻区域的中心。也就是说，有效的绝对雕刻坐标实际上是(-50,-50)到(50,50)这么个方形范围之内。虽然通过测试，我发现激光啄木鸟一代(不是Pro)的实际雕刻范围在(-100,-70)到(100,70)这么大的范围，厂商还是限制了100x100这个保守的区域来减小形变，保证雕刻质量。演示效果请参考`misc`文件夹中的`engraving_over_200mm_x_140mm.mp4`和`engraving_over_200mm_x_140mm.jpg`。
 * 你在Inkscape的画布上可以随意放置图形。此插件在输出Gcode坐标的时候会自动修正到整体图形以原点为中心。
 * 输出的Gcode文件是纯文本文件。一般来说扩展名不重要。但要传给安卓app的话，需要用txt扩展名才能被app识别。
-* 输出的Gcode文件体积不能超过1MB，否则机器内存不够。
+* 特别说明
+  * 给LP2使用的Gcode不需要在意功率和速度设置，因为实际雕刻时会使用手机app里的设置。只有给L1/Pro使用的Gcode需要预先设置，并且无法在手机app里修改。
+  * 给L1/Pro输出的Gcode文件体积不能超过1MB，否则机器内存不够。给LP2使用的Gcode文件体积上限是4MB。
 
 ## 位图转Gcode操作流程
 
@@ -39,16 +41,14 @@
 
 1) 运行Inkscape
 2) 导入图像
-3) 选中图像，点"Path"菜单，然后选"Trace Bitmap"
-4) 推荐用以下设置（没有中文版，直接翻译了选项名称）:
-	* 颜色(Colours): 2
-	* 扫描次数(Scans): 2
-	* 平滑(Smooth）: 选中
-	* 层叠扫描图层（Stack scans）: 选中
-	* 删除背景（Remove background）: 选中
-	* 实时预览（Live Preview）: 选中
-	* 其他选项自己随便测试效果
-5) 点"OK"按钮**一次**就好。然后关掉对话框。
+3) **选中**图像，点"路径"菜单，然后选"临摹位图轮廓"
+4) 在“临摹位图轮廓”页面推荐用以下设置（以下以Inkscape 1.0为例描述，上面视频演示用的是0.92版，界面有少许不同）
+   * 多次扫描 > 颜色
+   * Scans(扫描次数/颜色数量): 2
+   * 删除背景: 选中
+   * 其他选项自己随便测试效果
+   * 改变了设置后点“更新”按钮预览效果
+5) 点"应用"按钮**一次**就好。然后关掉对话框。
 6) 生成的矢量图现在重叠在你的位图上面。你可以把矢量图移开一点，选中位图然后把它删掉，免得碍事。
 7) 矢量图形放画布的什么位置不重要，只要尺寸在100mm x 100mm以内就行。工具栏有显示宽高尺寸。利用这个缩放到你需要的尺寸。
 8) 选中你要雕刻的图形，从"Path"菜单中选"Object to Path"转换成路径。
