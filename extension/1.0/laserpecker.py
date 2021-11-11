@@ -1382,7 +1382,9 @@ class LaserGcode(inkex.Effect):
             translate = [0, 0]
 
         # doc height in pixels (38 mm == 143.62204724px)
-        doc_height = self.svg.unittouu(self.document.getroot().xpath('@height', namespaces=inkex.NSS)[0])
+        # doc_height = self.svg.unittouu(self.document.getroot().xpath('@height', namespaces=inkex.NSS)[0])
+        # doc_height = self.svg.unittouu(self.getDocumentHeight()) # deprecation warning
+        doc_height = self.svg.unittouu(self.svg.height)
 
         if self.document.getroot().get('height') == "100%":
             doc_height = 1052.3622047
