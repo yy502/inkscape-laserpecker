@@ -16,7 +16,7 @@ This extension has been tested with LaserPecker L1, Pro and LP2.
 
 ## Installation
 
-1) Install Inkscape v0.92 or v1.0 (use v1.0 if you can)
+1) Install Inkscape v0.92 or v1.x (use v1.x if you can)
 2) Depending on your Inkscape version and operating system, copy `laserpecker.inx` and `laserpecker.py` from `extension/0.92` or `extension/1.0` directory into...
 	* For Linux: `~/.config/inkscape/extensions/`
 	* For Mac: Launch Inkscape > `Preferences` > `System` > Look for `User extensions` > click `Open`
