@@ -141,13 +141,13 @@ I have included a few sample images for you to test convert to Gcode and engrave
 
 ## Helper Files
 
-In `testing` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
+**L1/Pro only:** In `testing` directory, I have created some Gcode files to help you quickly test and find out the optimal power+speed settings for cutting or engraving your target material.
 
 * `engraving_test_p160-255,s500-800.txt`: Sweep across different power and speeds with small step sizes to help you map different engraving results to accurate Gcode settings (power,speed).
 * `cutting_test_p200-255,s70-400.txt`: This helps you to find the lowest possible setting that your material can be cut with. If even the highest setting (p255,s70) is unable to cut your material, consider cutting multiple times.
 * `sample_result.jpg`: Test results on a recycled paper.
 
-In `resources` directory, there are several sets of `grid` files. Each set has the following files:
+In `resources` directory, there are several sets of `grid` files, aiming to help you position your object under the laser. Each set has the following files:
 * `.svg`: The SVG file of the grid. Open it with Inkscape and convert to Gcode with your choice of settings and test your LaserPecker's engraving distortion and sizing.
 * `.txt`: Gcode for the grid with speed=500 and power=200. This is MUCH faster than using a bitmap image to engrave the grid over the 100mm x 100mm area.
 * `.png`: PNG image of the grid only for quick preview. I do not suggest engraving this as it's MUCH slower than using Gcode.
