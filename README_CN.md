@@ -12,8 +12,8 @@
 
 ## 安装方法
 
-1) 安装Inkscape 0.92或1.0版。（建议使用1.0版）
-2) 取决于你的Inkscape版本以及操作系统，复制`extension/0.92`或`extension/1.0`文件夹中的`laserpecker.inx`和`laserpecker.py`文件到...
+1) 安装Inkscape 0.92或更新版。
+2) 取决于你的Inkscape版本以及操作系统，复制`extension/<inkscape版本号>`文件夹中的`laserpecker.inx`和`laserpecker.py`两个文件到...
 	* Linux: `~/.config/inkscape/extensions/`
 	* MacOS: 运行Inkscape > `首选项` > `系统` > 找到`用户扩展`然后点击`打开`打开文件夹。
 	* Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
@@ -84,7 +84,7 @@
 	* 注意在改变矢量图案尺寸的时候可以忽略`autotrace`默认的px（像素）单位，不需要改变成mm。所以长x宽的数字值在100x100范围以内就可以了。插件在转换Gcode的时候会默认以mm为单位。
 4) 在生成Gcode的过程中可能会跳出一些警告信息，可以忽略。如果Gcode文件成功生成，你的图上会出现一层令人不安的巨大的箭头图案。你可以移动或删除这一图层，它只是显示激光所走的路径顺序。
 
-### Inkscape 1.0 用户
+### Inkscape 1.x 用户
 1) autotrace工具已经内置! \o/
 2) 运行Inkscape，把你要转换的图拖进去。暂时不需要担心图像尺寸。
 3) 选中图案，从`Path`（路径？）菜单选择 `Trace Bitmap`。 在弹出窗口的下拉菜单中切换到 `Centerline tracing (autotrace)`模式。使用默认设置应该就可以了。最后点 `OK`按钮。
@@ -113,10 +113,8 @@
 ## 传送Gcode文件到手机
 
 Gcode文件生成以后，
-* **安卓：** 复制Gcode文件到`(phone storage) > laserpecker files`文件夹中。用户字体文件(`.ttf`)也是复制到此文件夹中。
-* **iOS：** 通过任何网盘App上传Gcode文件，在iOS设备下载或导出Gcode文件，选择用**Files** App打开并保存到`Laserpecker > matarialgcode`文件夹中。
-
-最后打开啄木鸟App，在Examples页面的G-code分页中可以找到上传的Gcode文件进行雕刻。
+* **安卓：** 通过USB线或网盘或其他你最喜爱的方法把Gcode文件传入手机，比如在Downlaod文件夹中。打开啄木鸟app，在Examples页面的G-code分页中可以点击`+`符号添加Gcode文件，然后就可以选择并雕刻了。
+* **iOS：** ~通过任何网盘App上传Gcode文件，在iOS设备下载或导出Gcode文件，选择用**Files** App打开并保存到`Laserpecker > matarialgcode`文件夹中。~（过期信息。啄木鸟app已经多次更新，我没有iOS设备，所以无法提供准确信息。欢迎用户指正。）
 
 ## 例图
 
