@@ -568,6 +568,8 @@ class ArrangementGenetic:
 class LaserGcode(inkex.Effect):
 
     def center_gcode(self, gcode):
+        if not gcode:
+            self.error(_("Path not found.\n\n>>> Convert your shapes to paths via 'Path => Object to Path' first and try again. <<<"), "error")
         # Adjust X,Y coordinates so that the origin (0,0) is in the center of drawing.
         lines = gcode.split('\n')
         x_max, x_min, y_max, y_min = None, None, None, None
@@ -1318,7 +1320,7 @@ class LaserGcode(inkex.Effect):
 
         if self.selected_paths == {}:
             paths = self.paths
-            self.error(_("No path selected. Work on all available paths."), "warning")
+            self.error(_("No path selected. Using all available paths.\n\nNote that any shape not yet converted to path is omitted."), "warning")
         else:
             paths = self.selected_paths
 
@@ -1384,7 +1386,7 @@ class LaserGcode(inkex.Effect):
         # doc height in pixels (38 mm == 143.62204724px)
         # doc_height = self.svg.unittouu(self.document.getroot().xpath('@height', namespaces=inkex.NSS)[0])
         # doc_height = self.svg.unittouu(self.getDocumentHeight()) # deprecation warning
-        doc_height = self.svg.unittouu(self.svg.height)
+        doc_height = self.svg.unittouu(self.svg.viewport_height)
 
         if self.document.getroot().get('height') == "100%":
             doc_height = 1052.3622047
