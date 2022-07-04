@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Gcode Generator for L1/Pro/LP2</_name>
+    <id>laserpecker</id>
+	<dependency type="executable" location="extensions">laserpecker.py</dependency>
+
+	<param name="laser-speed" type="int" min="70" max="3000" _gui-text="Laser Speed (mm/min):">200</param>
+	<param name="laser-power" type="int" min="1" max="255" _gui-text="Laser Power (1-255):">255</param>
+	<param name="directory" type="string" _gui-text="Directory:"></param>
+	<param name="filename" type="string" _gui-text="Filename:">gcode.txt</param>
+
+	<effect needs-live-preview="false">
+		<effects-menu>
+			<submenu _name="LaserPecker"/>
+		</effects-menu>
+		<object-type>path</object-type>
+  	</effect>
+
+	<script>
+		<command reldir="extensions" interpreter="python">laserpecker.py</command>
+	</script>
+
+</inkscape-extension>
