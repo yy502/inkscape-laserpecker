@@ -14,9 +14,10 @@
 
 1) 安装Inkscape 0.92或更新版。
 2) 取决于你的Inkscape版本以及操作系统，复制`extension/<inkscape版本号>`文件夹中的`laserpecker.inx`和`laserpecker.py`两个文件到...
-	* Linux: `~/.config/inkscape/extensions/`
-	* MacOS: 运行Inkscape > `首选项` > `系统` > 找到`用户扩展`然后点击`打开`打开文件夹。
-	* Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
+   * Linux: `~/.config/inkscape/extensions/`
+     * Flatpak: `~/.var/app/org.inkscape.Inkscape/config/inkscape/extensions/`
+   * MacOS: 运行Inkscape > `首选项` > `系统` > 找到`用户扩展`然后点击`打开`打开文件夹。
+   * Windows: `C:\Program Files\Inkscape\share\inkscape\extensions\`
 3) 重启Inkscape，插件应该在`扩展`菜单下的`LaserPecker` > `Gcode Generator for L1/Pro/LP2`
 
 ## 设置和限制
