@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <_name>Gcode Generator for L1/Pro/LP2</_name>
+    <_name>Gcode Generator v2.0</_name>
     <id>laserpecker</id>
 	<dependency type="executable" location="extensions">laserpecker.py</dependency>
 
-	<param name="laser-speed" type="int" min="70" max="3000" _gui-text="Laser Speed (mm/min):">200</param>
-	<param name="laser-power" type="int" min="1" max="255" _gui-text="Laser Power (1-255):">255</param>
-	<param name="directory" type="string" _gui-text="Directory:"></param>
-	<param name="filename" type="string" _gui-text="Filename:">gcode.txt</param>
+	<param name="tabs" type="notebook">
+		<page name="_options" gui-text="Options">
+			<_param name="_info" type="description" xml:space="preserve">
+Power/Speed settings are ONLY needed for LP1/LP1z/LP1 Pro/LP1z Pro.
+For the rest models, ignore these settings as the LP app's Power/Depth
+settings will override Gcode Power/Speed commands.
+
+
+!!! Warning !!!
+
+(1) This Gcode generator is ONLY able to ensure your graphic is within
+a RECTANGULAR area. You are responsible to ensure your graphic does
+not exceed the ELLIPSE area for LP3/LP4.
+
+(2) Do not manually edit the coordinates of the generated Gcode commands.
+Your LP may get damaged by instructing the glavo scanners to go out of their
+designed ranges.
+  			</_param>
+			<separator />
+			<param name="model" type="optiongroup" appearance="combo" gui-text="Model and firmware version:">
+				<option value="lp1_100_149">LP1 (v1.0.0-1.4.9) 100x100mm Square</option>
+				<option value="lp1pro_200_249">LP1 Pro (v2.0.0-2.4.9) 100x100mm Square</option>
+				<option value="lp1z_250_269">LP1z (v2.5.0-2.6.9) 100x100mm Square</option>
+				<option value="lp1zpro_250_269">LP1z Pro (v2.0.0-2.6.9) 100x100mm Square</option>
+				<option value="lp2_300_313">LP2 (v3.0.0-3.1.3) 100x100mm Square</option>
+				<option value="lp2_314_349">LP2 (v3.1.4-3.4.9) 100x100mm Square</option>
+				<option value="lp2_350_357">LP2 (v3.5.0-3.5.7) 100x100mm Square</option>
+				<option value="lp2_358_369">LP2 (v3.5.8-3.6.9) 100x100mm Square</option>
+				<option value="lp2_370_372">LP2 (v3.7.0-3.7.2) 100x100mm Square</option>
+				<option value="lp2_373_399">LP2 (v3.7.3-3.9.9) 100x100mm Square</option>
+				<option value="lp3_5500_5599">LP3 (v5.5.0.0-5.5.9.9) 90x60mm Ellipse</option>
+				<option value="lp3_550_599">LP3 (v5.5.0-5.9.9) 115x80mm Ellipse</option>
+				<option value="lp4_650_699">LP4 (v6.5.0-6.9.9) 160x120mm Ellipse</option>
+			</param>
+			<param name="laser-speed" type="int" min="70" max="6000" _gui-text="Speed (mm/min):">200</param>
+			<param name="laser-power" type="int" min="1" max="255" _gui-text="Power (1-255):">255</param>
+			<param name="debugging-layer" type="bool" _gui-text="Draw Debugging Layer">false</param>
+			<param name="path-name" type="path" mode="file_new" _gui-text="Save as:"></param>
+		</page>
+		<page name="readme" gui-text="Readme">
+			<_param name="_readme" type="description" xml:space="preserve">
+For the latest version, instructions and bug reports, please visit:
+https://github.com/yy502/inkscape-laserpecker
+
+To inspect generated Gcode, please upload Gcode file to:
+https://ncviewer.com/
+  			</_param>
+		</page>
+	</param>
 
 	<effect needs-live-preview="false">
 		<effects-menu>

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Modified by Yi Yu (yiyu.inbox@gmail.com) 2020 for LaserPecker
+Modified by Yi Yu (yiyu.inbox@gmail.com) since 2020 for LaserPecker
 Distributed via https://github.com/yy502/inkscape-laserpecker
 
 Modified by Jay Johnson 2015, J Tech Photonics, Inc., jtechphotonics.com
@@ -134,7 +134,7 @@ G90
 ;all units in mm
 G21
 ;move fast
-G1 F3000.0
+G1 F6000.0
 
 """,
     'footer': "\n;return to origin\nG1 X0.0 Y0.0\n"
@@ -564,15 +564,43 @@ class ArrangementGenetic:
 ###        Gcodetools class
 ###
 ################################################################################
-
 class LaserGcode(inkex.Effect):
 
-    def center_gcode(self, gcode):
+    #################################
+    # For LaserPecker
+    #################################
+    def transform_gcode(self, gcode):
+        
+        CENTER = 0
+        TOP_LEFT = 1
+        SQUARE = 0
+        ELLIPSE = 1
+        default_center = {"width": 100, "height": 100, "calibration": 100, "shape": SQUARE, "origin": CENTER}
+        default_top_left = {"width": 100, "height": 100, "calibration": 100, "shape": SQUARE, "origin": TOP_LEFT}
+
+        specs = {
+            "lp1_100_149": default_center,
+            "lp1pro_200_249": default_center,
+            "lp1z_250_269": default_center,
+            "lp1zpro_250_269": default_center,
+            "lp2_300_313": default_center,
+            "lp2_314_349": default_top_left,
+            "lp2_350_357": default_center,
+            "lp2_358_369": default_top_left,
+            "lp2_370_372": default_center,
+            "lp2_373_399": default_top_left,
+            "lp3_5500_5599": {"width": 90, "height": 60, "calibration": 100, "shape": ELLIPSE, "origin": CENTER},
+            "lp3_550_599": {"width": 115, "height": 80, "calibration": 115, "shape": ELLIPSE, "origin": TOP_LEFT},
+            "lp4_650_699": {"width": 160, "height": 120, "calibration": 160, "shape": ELLIPSE, "origin": TOP_LEFT},
+        }
+
         if not gcode:
             self.error(_("Path not found.\n\n>>> Convert your shapes to paths via 'Path => Object to Path' first and try again. <<<"), "error")
-        # Adjust X,Y coordinates so that the origin (0,0) is in the center of drawing.
+        
+        # get graphic width and height
         lines = gcode.split('\n')
-        x_max, x_min, y_max, y_min = None, None, None, None
+        _all_x = []
+        _all_y = []
         for line in lines:
             if line == "G1 X0 Y0" or line.startswith("G1 X0 Y0 "):
                 pass
@@ -580,22 +608,30 @@ class LaserGcode(inkex.Effect):
                 words = line.split(' ')
                 for word in words:
                     if word.startswith('X'):
-                        x = float(word[1:])
-                        if x_max is None or x > x_max:
-                            x_max = x
-                        if x_min is None or x < x_min:
-                            x_min = x
+                        _all_x.append(float(word[1:]))
                     elif word.startswith('Y'):
-                        y = float(word[1:])
-                        if y_max is None or y > y_max:
-                            y_max = y
-                        if y_min is None or y < y_min:
-                            y_min = y
+                        _all_y.append(float(word[1:]))
+
+        x_min, x_max, y_min, y_max = min(_all_x), max(_all_x),  min(_all_y), max(_all_y)
+
         width = x_max - x_min
         height = y_max - y_min
-        if width > 100.1 or height > 100.1:
-            self.error(_("Graphics are too big: %.1f x %.1f.\n\nScale it down to within 100x100 for LaserPecker to function properly." % (width, height)),"error")
+
+        if specs[self.options.model]["origin"] == CENTER:
+            x_offset = x_min + width/2
+            y_offset = y_min + height/2
+        elif specs[self.options.model]["origin"] == TOP_LEFT:
+            x_offset = x_min
+            y_offset = y_min + height
+        else:
+            self.error(_("Unexpected Origin position: %d" % specs[self.options.model]["origin"]),"error")
+
+        # check size
+        if width > specs[self.options.model]["width"] or height > specs[self.options.model]["height"]:
+            self.error(_("Graphic is too big: %.1f x %.1f.\n\nScale it down to within %dx%d for your selected LP model." % (width, height, specs[self.options.model]["width"], specs[self.options.model]["height"])),"error")
             return ""
+        
+        # transform coordinates and cmd
         _gcode = ""
         for line in lines:
             if line == "G1 X0 Y0" or line.startswith("G1 X0 Y0 "):
@@ -604,19 +640,39 @@ class LaserGcode(inkex.Effect):
                 words = line.split(' ')
                 for word in words:
                     if word.startswith('X'):
-                        x = float(word[1:]) - x_min - width/2
+                        x = float(word[1:]) - x_offset
+                        if specs[self.options.model]["shape"] == ELLIPSE: # center
+                            x += (specs[self.options.model]["calibration"]-width)/2
                         line = line.replace(word, "X%.5f" % x)
                     elif word.startswith('Y'):
-                        y = float(word[1:]) - y_min - height/2
+                        y = float(word[1:]) - y_offset
+                        if specs[self.options.model]["origin"] == TOP_LEFT:
+                            y = abs(y)
+                            if specs[self.options.model]["shape"] == ELLIPSE: # center
+                                y += (specs[self.options.model]["calibration"]-height)/2
                         line = line.replace(word, "Y%.5f" % y)
+                    elif word.startswith('J') and specs[self.options.model]["origin"] == TOP_LEFT:
+                        if word.startswith('J-'):  # Y offset
+                            line = line.replace("J-", "J")
+                        else:
+                            line = line.replace("J", "J-")
+                        if line.startswith("G2"):  # clockwise arc move
+                            line = line.replace("G2", "G3")
+                        elif line.startswith("G3"): # counter-clockwise arc move
+                            line = line.replace("G3", "G2")
             _gcode += line + '\n'
         
-        return ";width:%.1f mm\n;height:%.1f mm\n\n" % (width, height) + _gcode
+        return (
+            (";ver=v1.0.0\n" if specs[self.options.model]["shape"] == ELLIPSE else "") +
+            ";for %s\n;width:%.1f mm\n;height:%.1f mm\n\n" % (self.options.model.upper(), width, height) +
+            defaults['header'] +
+            _gcode +
+            defaults['footer'])
 
     def export_gcode(self, gcode):
-        with open(self.options.directory+self.options.file, "w") as f:
-            f.write(self.header + self.center_gcode(gcode) + self.footer)
-            #f.write(self.header + gcode + self.footer)
+        with open(self.options.path_name, "w") as f:
+            f.write(self.transform_gcode(gcode))
+        self.error(_("\n>>>  Successfully saved Gcode to %s" % self.options.path_name), "warning")
 
     def add_arguments_old(self):
         add_option = self.OptionParser.add_option
@@ -645,11 +701,14 @@ class LaserGcode(inkex.Effect):
         # Define command line arguments, inkex will use these to interface with the GUI defined in laser.ini
 
         self.arguments = [
-            {"name": "--directory", "type": str, "dest": "directory",
-             "default": "", "help": "Output directory"},
-
-            {"name": "--filename", "type": str, "dest": "file",
-             "default": "output.gcode", "help": "File name"},
+            {"name": "--tabs", "type": str, "dest": "tabs",
+             "default": "", "help": "Tabs of information and options."},
+            
+            {"name": "--model", "type": str, "dest": "model",
+             "default": "lp1", "help": "Model of your LP engraver: lp1, pro, lp2, lp3, lp4"},
+            
+            {"name": "--path-name", "type": str, "dest": "path_name",
+             "default": "", "help": "Path and file name of the generated Gcode"},
 
             # {"name": "--add-numeric-suffix-to-filename", "type": inkex.Boolean,
             #  "dest": "add_numeric_suffix_to_filename", "default": False,
@@ -669,6 +728,9 @@ class LaserGcode(inkex.Effect):
 
             {"name": "--laser-power", "type": int, "dest": "laser_power", "default": 255,
              "help": "1-255 (1=min, 255=max)"},
+
+            {"name": "--debugging-layer", "type": inkex.Boolean, "dest": "debugging_layer",
+             "default": True, "help": "Draw a layer of generated paths with arrows for debugging"},
 
             # {"name": "--passes", "type": int, "dest": "passes", "default": 1,
             #  "help": "Quantity of passes"},
@@ -841,38 +903,20 @@ class LaserGcode(inkex.Effect):
 
 
     def check_dir(self):
-        if self.options.directory == '' or self.options.directory is None:
-            self.error(_("Please specify a valid directory."),"error")
+        if self.options.path_name == '' or self.options.path_name is None:
+            self.error(_("Please specify a valid directory and file name to save the generated Gcode as."),"error")
             return False
-        if self.options.directory[-1] not in ["/", "\\"]:
-            if "\\" in self.options.directory:
-                self.options.directory += "\\"
-            else:
-                self.options.directory += "/"
-        print_("Checking direcrory: '%s'" % self.options.directory)
-        if (os.path.isdir(self.options.directory)):
-            if (os.path.isfile(self.options.directory + 'header')):
-                f = open(self.options.directory + 'header', 'r')
-                self.header = f.read()
-                f.close()
-            else:
-                self.header = defaults['header']
-            if (os.path.isfile(self.options.directory + 'footer')):
-                f = open(self.options.directory + 'footer', 'r')
-                self.footer = f.read()
-                f.close()
-            else:
-                self.footer = defaults['footer']
-        else:
-            self.error(_("Directory does not exist. Please specify a valid directory."),"error")
-            return False
-
-        print_("Testing writing rights on '%s'" % (self.options.directory + self.options.file))
+        # fix file extension as needed
+        if not self.options.path_name.endswith(".txt"):
+            self.options.path_name += ".txt"
+        # insert LP model
+        self.options.path_name = self.options.path_name.replace(".txt", "_" + self.options.model + ".txt")
+        print_("Testing writing rights on '%s'" % self.options.path_name)
         try:
-            f = open(self.options.directory + self.options.file, "w")
+            f = open(self.options.path_name, "w")
             f.close()
         except:
-            self.error(_("Can not write to specified file.\n%s"%(self.options.directory+self.options.file)),"error")
+            self.error("Can not write to specified file: \n%s" % self.options.path_name, "error")
             return False
         return True
 
@@ -1356,7 +1400,8 @@ class LaserGcode(inkex.Effect):
                         p += csp
                 dxfpoints = sort_dxfpoints(dxfpoints)
                 curve = self.parse_curve(p, layer)
-                self.draw_curve(curve, layer, biarc_group)
+                if self.options.debugging_layer:
+                    self.draw_curve(curve, layer, biarc_group)
                 gcode += self.generate_gcode(curve, layer, 0)
 
         self.export_gcode(gcode)
@@ -1411,14 +1456,14 @@ class LaserGcode(inkex.Effect):
                                        {'gcodetools': "Gcodetools orientation point (2 points)"})
             etree.SubElement(g, inkex.addNS('path', 'svg'),
                                    {
-                                       'style': "stroke:none;fill:#000000;",
+                                       'style': "stroke:none;fill:#ffffff;",
                                        'd': 'm %s,%s 2.9375,-6.343750000001 0.8125,1.90625 6.843748640396,-6.84374864039 0,0 0.6875,0.6875 -6.84375,6.84375 1.90625,0.812500000001 z z' % (
                                            si[0], -si[1] + doc_height),
                                        'gcodetools': "Gcodetools orientation point arrow"
                                    })
             t = etree.SubElement(g, inkex.addNS('text', 'svg'),
                                        {
-                                           'style': "font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;",
+                                           'style': "font-size:4px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;",
                                            inkex.addNS("space", "xml"): "preserve",
                                            'x': str(si[0] + 10),
                                            'y': str(-si[1] - 10 + doc_height),
@@ -1456,7 +1501,7 @@ class LaserGcode(inkex.Effect):
             "id": "LaserPecker Engraver",
             "speed": self.options.laser_speed,
             "gcode before path": ";laser on\nM03 S%d\nG4 P0" % self.options.laser_power,
-            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F3000.0\n",
+            "gcode after path": "G4 P0\n;laser off\nM05 S0\n;move fast\nG1 F6000.0\n",
         }
 
         self.get_info()
