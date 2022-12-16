@@ -25,7 +25,7 @@ This extension has been tested with LaserPecker L1, Pro and LP2.
 3) Restart Inkscape and you should be able to access the extension from `Extensions` > `LaserPecker` > `Gcode Generator for L1/Pro/L2`
 
 
-## Settings and Limitations
+## Settings and Limitations (only applies to LP1 to some of LP2 variations. to be updated)
 
 * Laser head idle movement speed is hard-coded to 3000mm/min, as this is what's used in LaserPecker's official sample Gcode files.
 * Lowest laser speed is limited to 70mm/min, as this is the lowest effective speed that LaserPecker App allows. i.e. I tested speeds from 0.01 to 70mm/min and they all came out the same on the engraver end.
