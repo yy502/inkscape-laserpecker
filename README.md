@@ -86,11 +86,6 @@ It is that easy! After filling your shape, generate Gcode as you would and optio
 
 ## Convert B&W Images to Single Line Sketches
 
-Click to watch video tutorial:
-
-[![](https://img.youtube.com/vi/-6GmyB0oL9I/0.jpg)](https://www.youtube.com/watch?v=-6GmyB0oL9I)
-
-
 ### Inkscape 0.92 users
 1) follow this [guide (TL;DR part)](https://github.com/yy502/autotrace#tldr) to compile & install `autotrace` (linux-only I'm afraid).
 2) Use the single-line command shown in the link above to convert your bitmap (png) image to svg
@@ -99,16 +94,7 @@ Click to watch video tutorial:
 4) Note that you may see some warning messages during generation. As long as there's no error, you can ignore them. In the end, if you see some horrible overlay of arrows appear on top of your graphic, the Gcode is generated OK, and you can move or delete this layer as you wish.
 
 ### Inkscape 1.x users
-1) Inkscape 1.x has this amazing tool built-in! \o/
-2) Launch Inkscape, drag and drop a B&W image into Inkscape canvas. Don't need to worry about resizing it for now.
-3) Click to select the image, go to `Path` menu, then `Trace Bitmap`. From the drop-down list, select `Centerline tracing (autotrace)`. Leave other settings as default should be fine. Finally click `OK`.
-4) The generated centerline trace is overlpping the original image, so it's not easily visible. Click on the image and drag it down to see the line trace on its own.
-5) With this line trace selected, go to the top tool bar, lock aspect ratio and resize selection to witin 100x100 mm.
-6) Finally use this Gcode extension to generate Gcode for LaserPecker.
-7) Note that you may see some warning messages during generation. As long as there's no error, you can ignore them. In the end, if you see some horrible overlay of arrows appear on top of your graphic, the Gcode is generated OK, and you can move or delete this layer as you wish.
-
-<img src="tutorial/centerline_01.png" width="800px">
-<img src="tutorial/centerline_02.png" width="800px">
+see https://lp.systemd.one/how-to/inkscape-1-x-converting-bw-images-to-single-line-sketches-for-gcode-engraving/
 
 
 ## Optional: Inspect Generated Gcode
