@@ -1,7 +1,7 @@
 [中文介绍点此处](README_CN.md)
 
 # LaserPecker Extension for Inkscape
-This is a Gcode generator extension for Inkscape, tailored for LaserPecker L1, Pro and LP2. The LaserPecker App has a built-in Gcode converter with capability of line-filling, which is pretty easy to use. This extension allows you to manually set power and speed beyond the App's limitations with Gcode values. (Hardware limitations still apply. Read on...)
+This is a Gcode generator extension for Inkscape, that will generate Gcode compatible with LaserPecker engravers. The LaserPecker App already has a built-in Gcode converter with capability of line-filling, which is pretty easy to use. Please consider using the built-in Gcode mode first. 
 
 
 ## LaserPecker
@@ -11,8 +11,20 @@ For more details, visit their official [English site](https://www.laserpecker.ne
 
 ## Compatibility
 
-This extension has been tested with LaserPecker L1, Pro and LP2.
-
+Before generating Gcode for LP, please select the correct model and firmware number.
+* LP1 (v1.0.0-1.4.9)
+* LP1 Pro (v2.0.0-2.4.9)
+* LP1z (v2.5.0-2.6.9)
+* LP1z Pro (v2.0.0-2.6.9)
+* LP2 (v3.0.0-3.1.3)
+* LP2 (v3.1.4-3.4.9)
+* LP2 (v3.5.0-3.5.7)
+* LP2 (v3.5.8-3.6.9)
+* LP2 (v3.7.0-3.7.2)
+* LP2 (v3.7.3-3.9.9)
+* LP3 (v5.5.0.0-5.5.9.9)
+* LP3 (v5.5.0-5.9.9)
+* LP4 (v6.5.0-6.9.9)
 
 ## Installation
 
@@ -25,19 +37,22 @@ This extension has been tested with LaserPecker L1, Pro and LP2.
 3) Restart Inkscape and you should be able to access the extension from `Extensions` > `LaserPecker` > `Gcode Generator for L1/Pro/L2`
 
 
-## Settings and Limitations (only applies to LP1 to some of LP2 variations. to be updated)
+## Settings and Limitations
 
-* Laser head idle movement speed is hard-coded to 3000mm/min, as this is what's used in LaserPecker's official sample Gcode files.
-* Lowest laser speed is limited to 70mm/min, as this is the lowest effective speed that LaserPecker App allows. i.e. I tested speeds from 0.01 to 70mm/min and they all came out the same on the engraver end.
-* Laser power can be set from 1 (min) to 255 (max). (0=off, which makes the Gcode useless, so I disallowed it.)
-* Engraving area is limited to 100mm x 100mm in size.
-* This extension warns if the target graphics are larger than 100mm x 100mm, and you should scale it down and try again.
-* The origin (0,0) is in the centre of the 100mm x 100mm engraving area. i.e. the absolute coordinates range from (-50,-50) to (50,50). Although LaserPecker L1 (not Pro) is capable of engraving a much larger area, from (-100,-70) to (100,70) as I manually tested, it is limited to 100mm x 100mm by the App and the machine to minimise distortion and ensure consistent engraving quality. See [engraving_over_200mm_x_140mm.mp4](misc/engraving_over_200mm_x_140mm.mp4) and [engraving_over_200mm_x_140mm.jpg](misc/engraving_over_200mm_x_140mm.jpg) for a demo.
-* The position of target graphics on Inkscape canvas is irrelevant. This extension will automatically offset X,Y coordinates, so that the resulting Gcode coordinates are centred to the origin (0,0).
-* Output Gcode file should end in `.txt`. The extension does not normally matter, as it's just a plain text file, but here `.txt` is what's recognised as Gcode files by LaserPecker App.
+* Laser head idle movement speed is hard-coded to 6000mm/min.
+  * Faster or slower than the engraver's top speed does not matter much. It does not affect engraving quality.
+* 1st Gen LP Only:
+  * The lowest laser speed is limited to 70mm/min, as this is the lowest **effective** speed that LaserPecker App allows. i.e. I tested speeds from 0.01mm/min to 70mm/min and they all came out the same on the engraver end.
+  * Laser power can be set from 1 (min) to 255 (max). (0=off, which makes the Gcode useless, so I disallowed it.)
+
+* Maximum engraving range depends on the model of your LP. It is noted in the dropdown list of the entension for your reference.
+* This extension warns if the target graphics are larger than allowed engraving range, and you should scale it down and try again.
+* The origin (X=0,Y=0) could be in the **centre** or **top-left** of the maximum engraving range depending on the model. This is taken care of by this entension. This is one of the reasons why a generic Gcode file may not work.
+* The position of your graphics on Inkscape canvas is irrelevant. This extension will automatically center your graphics in the LP's engraving range for the best engraving quality.
+* Output Gcode file should end in `.txt` otherwise the LaserPecker App won't recognise it.
 * **Note**
-  * Generated Gcode file should not exceed 1MB each for L1/Pro, 4MB for LP2. This is a hard limit by the engravers' memory.
-  * You can use arbitrary settings for *power* and *speed* if you are generating **Gcode for LP2**, because these settings will be overridden by the app's power and depth settings. For L1/Pro, choose your settings carefully at generation time as these can't be changed via the app.
+  * Generated Gcode file should not exceed 1MB each for L1/Pro, or 4MB each for LP2. This is a hard limit by the engravers' physical memory.
+  * You can use arbitrary settings for *power* and *speed* if you are generating Gcode for LP2 or newer LP engravers, because these settings will be overridden by the app's power and depth settings. For L1/Pro, choose your settings carefully at generation time as these can't be changed via the app.
 
 
 ## Image to Gcode
