@@ -617,10 +617,10 @@ class LaserGcode(inkex.Effect):
         width = x_max - x_min
         height = y_max - y_min
 
-        if specs[self.options.model]["origin"] == CENTER:
+        if specs[self.options.model]["origin"] == CENTER:  # no more shifting needed
             x_offset = x_min + width/2
             y_offset = y_min + height/2
-        elif specs[self.options.model]["origin"] == TOP_LEFT:
+        elif specs[self.options.model]["origin"] == TOP_LEFT: # to be centered below
             x_offset = x_min
             y_offset = y_min + height
         else:
@@ -640,16 +640,16 @@ class LaserGcode(inkex.Effect):
                 words = line.split(' ')
                 for word in words:
                     if word.startswith('X'):
-                        x = float(word[1:]) - x_offset
-                        if specs[self.options.model]["shape"] == ELLIPSE: # center
-                            x += (specs[self.options.model]["calibration"]-width)/2
+                        if specs[self.options.model]["origin"] == CENTER:
+                            x = float(word[1:]) - x_min - width/2
+                        elif specs[self.options.model]["origin"] == TOP_LEFT:
+                            x = float(word[1:]) - x_min + (specs[self.options.model]["calibration"]-width)/2
                         line = line.replace(word, "X%.5f" % x)
                     elif word.startswith('Y'):
-                        y = float(word[1:]) - y_offset
-                        if specs[self.options.model]["origin"] == TOP_LEFT:
-                            y = abs(y)
-                            if specs[self.options.model]["shape"] == ELLIPSE: # center
-                                y += (specs[self.options.model]["calibration"]-height)/2
+                        if specs[self.options.model]["origin"] == CENTER:
+                            y = float(word[1:]) - y_min - height/2
+                        elif specs[self.options.model]["origin"] == TOP_LEFT:
+                            y = abs(float(word[1:]) - y_min - height) + (specs[self.options.model]["calibration"]-height)/2
                         line = line.replace(word, "Y%.5f" % y)
                     elif word.startswith('J') and specs[self.options.model]["origin"] == TOP_LEFT:
                         if word.startswith('J-'):  # Y offset
@@ -663,7 +663,7 @@ class LaserGcode(inkex.Effect):
             _gcode += line + '\n'
         
         return (
-            (";ver=v1.0.0\n" if specs[self.options.model]["shape"] == ELLIPSE else "") +
+            (";ver=v1.0.0\n" if specs[self.options.model]["origin"] == CENTER else "") +
             ";for %s\n;width:%.1f mm\n;height:%.1f mm\n\n" % (self.options.model.upper(), width, height) +
             defaults['header'] +
             _gcode +
