@@ -663,7 +663,7 @@ class LaserGcode(inkex.Effect):
             _gcode += line + '\n'
         
         return (
-            (";ver=v1.0.0\n" if specs[self.options.model]["origin"] == CENTER else "") +
+            (";ver=v1.0.0\n" if specs[self.options.model]["origin"] == CENTER else ";ver=v2.0.0\n") +
             ";for %s\n;width:%.1f mm\n;height:%.1f mm\n\n" % (self.options.model.upper(), width, height) +
             defaults['header'] +
             _gcode +
