@@ -4,7 +4,7 @@ This is a Gcode generator extension for Inkscape, that will generate Gcode compa
 
 ## LaserPecker
 LaserPecker is a brand of affordable and portable consumer level laser engravers.
-For more details, visit their official [web site](https://www.laserpecker.net/).
+For more details, visit [The Unofficial Wiki for LaserPecker](https://lp.systemd.one/).
 
 
 ## Compatibility
