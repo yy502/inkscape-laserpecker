@@ -128,7 +128,7 @@ Click to watch video tutorial:
 Once the `.txt` Gcode files are generated...
 
 * **Android:** copy files to phone storage using USB cable, your favourite cloud sotrage app, email, FB Message, etc...... into `Download` directory for example. Then in LP app, go to `Examples > G-code` tab, click on the `+` symbol and add your Gcode file to the app. 
-* **iOS:** ~copy your Gcode file to any Cloud drive, and **Open** or **Export** it on your iOS device. When prompted, choose **Open in** or **Save to** `Files` App, and then save it to `Laserpecker > matarialgcode` directory (yes, the directory name is misspelt by LP).~ (app has changed a lot and I don't have an iOS device, so this needs to be confirmed)
+* **iOS (Tested on iOS 16):** Save gcode file on any cloud based volume accessible to the Files app. This can be on iCloud by default, although Files can be used to access other cloud storage services such as DropBox. From the Files app, copy the gcode file by long pressing the file, and selecting Copy. Navigate back to the root level of the Files app, and select the On My iPhone location. Paste the gcode file in LaserPecker/Matarialgcode folder in the On My iPhone location. The gcode file will now be available in G-code section of the Examples section in the LaserPecker app.
 
 Finally, your Gcode file is available in LP App under `Examples > G-code` tab.
 
