@@ -23,6 +23,8 @@ Before generating Gcode for LP, please select the correct model and firmware num
 * LP3 (v5.5.0.0-5.5.9.9)
 * LP3 (v5.5.0-5.9.9)
 * LP4 (v6.5.0-6.9.9)
+* LX1
+* LX1 Max
 
 ## Installation
 
