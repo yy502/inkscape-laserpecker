@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <_name>Gcode Generator v2.1</_name>
+    <_name>Gcode Generator v2.2</_name>
     <id>laserpecker</id>
 	<dependency type="executable" location="extensions">laserpecker.py</dependency>
 
@@ -37,6 +37,8 @@ designed ranges.
 				<option value="lp3_5500_5599">LP3 (v5.5.0.0-5.5.9.9) 90x60mm Ellipse</option>
 				<option value="lp3_550_599">LP3 (v5.5.0-5.9.9) 115x80mm Ellipse'</option>
 				<option value="lp4_650_699">LP4 (v6.5.0-6.9.9) 160x120mm Ellipse'</option>
+				<option value="lx1">LX1 400x420mm Rectangle'</option>
+				<option value="lx1max">LX1 Max 400x800mm Rectangle'</option>
 			</param>
 			<param name="laser-speed" type="int" min="70" max="6000" _gui-text="Speed (mm/min):">200</param>
 			<param name="laser-power" type="int" min="1" max="255" _gui-text="Power (1-255):">255</param>
@@ -50,6 +52,11 @@ https://github.com/yy502/inkscape-laserpecker
 
 To inspect generated Gcode, please upload Gcode file to:
 https://ncviewer.com/
+
+请访问 https://github.com/yy502/inkscape-laserpecker
+以获取最新版本插件，查看使用说明，或提交使用问题。
+
+推荐使用 https://ncviewer.com/ 检视生成的Gcode文件。
   			</_param>
 		</page>
 	</param>

@@ -575,8 +575,8 @@ class LaserGcode(inkex.Effect):
         TOP_LEFT = 1
         SQUARE = 0
         ELLIPSE = 1
-        default_center = {"width": 100, "height": 100, "calibration": 100, "shape": SQUARE, "origin": CENTER}
-        default_top_left = {"width": 100, "height": 100, "calibration": 100, "shape": SQUARE, "origin": TOP_LEFT}
+        default_center = {"width": 100, "height": 100, "center": 100, "shape": SQUARE, "origin": CENTER}
+        default_top_left = {"width": 100, "height": 100, "center": 100, "shape": SQUARE, "origin": TOP_LEFT}
 
         specs = {
             "lp1_100_149": default_center,
@@ -589,9 +589,11 @@ class LaserGcode(inkex.Effect):
             "lp2_358_369": default_top_left,
             "lp2_370_372": default_center,
             "lp2_373_399": default_top_left,
-            "lp3_5500_5599": {"width": 90, "height": 60, "calibration": 100, "shape": ELLIPSE, "origin": CENTER},
-            "lp3_550_599": {"width": 115, "height": 80, "calibration": 115, "shape": ELLIPSE, "origin": TOP_LEFT},
-            "lp4_650_699": {"width": 160, "height": 120, "calibration": 160, "shape": ELLIPSE, "origin": TOP_LEFT},
+            "lp3_5500_5599": {"width": 90, "height": 60, "center": 100, "shape": ELLIPSE, "origin": CENTER},
+            "lp3_550_599": {"width": 115, "height": 80, "center": 115, "shape": ELLIPSE, "origin": TOP_LEFT},
+            "lp4_650_699": {"width": 160, "height": 120, "center": 160, "shape": ELLIPSE, "origin": TOP_LEFT},
+            "lx1": {"width": 400, "height": 420, "center": 0, "shape": SQUARE, "origin": TOP_LEFT},
+            "lx1max": {"width": 400, "height": 800, "center": 0, "shape": SQUARE, "origin": TOP_LEFT},
         }
 
         if not gcode:
@@ -628,7 +630,9 @@ class LaserGcode(inkex.Effect):
 
         # check size
         if width > specs[self.options.model]["width"] or height > specs[self.options.model]["height"]:
-            self.error(_("Graphic is too big: %.1f x %.1f.\n\nScale it down to within %dx%d for your selected LP model." % (width, height, specs[self.options.model]["width"], specs[self.options.model]["height"])),"error")
+            self.error(
+                _("图像尺寸超出允许范围!\nGraphic is too big: %.1f x %.1f.\n\nScale it down to within %dx%d for your selected LP model." % (width, height, specs[self.options.model]["width"], specs[self.options.model]["height"])),
+                "error")
             return ""
         
         # transform coordinates and cmd
@@ -643,13 +647,19 @@ class LaserGcode(inkex.Effect):
                         if specs[self.options.model]["origin"] == CENTER:
                             x = float(word[1:]) - x_min - width/2
                         elif specs[self.options.model]["origin"] == TOP_LEFT:
-                            x = float(word[1:]) - x_min + (specs[self.options.model]["calibration"]-width)/2
+                            if specs[self.options.model]["center"]: # center graphic
+                                x = float(word[1:]) - x_min + (specs[self.options.model]["center"]-width)/2
+                            else: # push graphic to top left corner (gantry)
+                                x = float(word[1:]) - x_min
                         line = line.replace(word, "X%.5f" % x)
                     elif word.startswith('Y'):
                         if specs[self.options.model]["origin"] == CENTER:
                             y = float(word[1:]) - y_min - height/2
                         elif specs[self.options.model]["origin"] == TOP_LEFT:
-                            y = abs(float(word[1:]) - y_min - height) + (specs[self.options.model]["calibration"]-height)/2
+                            if specs[self.options.model]["center"]: # center graphic
+                                y = abs(float(word[1:]) - y_min - height) + (specs[self.options.model]["center"]-height)/2
+                            else: # push graphic to top left corner (gantry)
+                                y = abs(float(word[1:]) - y_min - height)
                         line = line.replace(word, "Y%.5f" % y)
                     elif word.startswith('J') and specs[self.options.model]["origin"] == TOP_LEFT:
                         if word.startswith('J-'):  # Y offset
@@ -672,7 +682,7 @@ class LaserGcode(inkex.Effect):
     def export_gcode(self, gcode):
         with open(self.options.path_name, "w") as f:
             f.write(self.transform_gcode(gcode))
-        self.error(_("\n>>>  Successfully saved Gcode to %s" % self.options.path_name), "warning")
+        self.error(_("\n成功生成Gcode文件!\nSuccessfully saved Gcode to %s" % self.options.path_name), "warning")
 
     def add_arguments_old(self):
         add_option = self.OptionParser.add_option
